@@ -1,42 +1,20 @@
-import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import GithubContext from "../../context/github_finder/context";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import loading_url from '../../imgs/Confetti_logo.png';
 
-const Navbar = ({ title }) => {
-  const githubContext = useContext(GithubContext);
-  const [searchUserText, setsearchUserText] = useState("");
-  const [errorpage, seterrorpage] = useState(false);
-
-  const onChange = e => {
-    setsearchUserText(e.target.value);
-  };
-
-  const onSubmit = e => {
-    e.preventDefault();
-    if (searchUserText !== "") {
-      githubContext.searchUsers(searchUserText);
-    } else {
-      seterrorpage(true);
-      setTimeout(function() {
-        seterrorpage(false);
-      }, 1500);
-    }
-  };
-
+const Navbar = () => {
   return (
     <React.Fragment>
-      {errorpage && (
-        <div className="alert alert-danger mt-5" role="alert">
-          Please specify the user name.
-        </div>
-      )}
-
-      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <nav className="navbar navbar-expand-lg fixed-top navbar-light">
         <Link className="navbar-brand text-info" to="/">
-          <i className="fas fa-user-circle fa-lg"></i>
-          &nbsp;
-          {title}
+          <img
+            src={loading_url}
+            alt="Confetti"
+            style={{ marginLeft: '10%' }}
+            width="50px"
+            height="40px"
+          />
         </Link>
         <button
           className="navbar-toggler"
@@ -51,33 +29,32 @@ const Navbar = ({ title }) => {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item ">
+              <Link className="nav-link" to="/">
+                <button type="button" className="btn btn-default text-white">
+                  Home
+                </button>
+              </Link>
+            </li>
             <li className="nav-item ">
               <Link className="nav-link" to="AboutUs">
-                About us
+                <button type="button" className="btn btn-default text-white">
+                  About us
+                </button>
+              </Link>
+            </li>
+            <li className="nav-item ">
+              <Link className="nav-link" to="AboutUs">
+                <button
+                  type="button"
+                  className="btn btnThemeClr text-white font-weight-bold pl-4 pr-4"
+                >
+                  GET IN TOUCH
+                </button>
               </Link>
             </li>
           </ul>
-          <form
-            className="form-inline my-2 my-lg-0 ml-auto col-md-10"
-            onSubmit={onSubmit}
-          >
-            <input
-              className="form-control mr-sm-2 col-md-8 ml-auto"
-              type="search"
-              placeholder="Enter Name"
-              aria-label="Search"
-              name="searchUserText"
-              value={searchUserText}
-              onChange={onChange}
-            />
-            <button
-              className="btn btn-outline-success my-2 my-sm-0"
-              type="submit"
-            >
-              Search Github Users
-            </button>
-          </form>
         </div>
       </nav>
     </React.Fragment>
@@ -85,11 +62,11 @@ const Navbar = ({ title }) => {
 };
 
 Navbar.defaultProps = {
-  title: "Page Title"
+  title: 'Page Title',
 };
 
 Navbar.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 
 export default Navbar;

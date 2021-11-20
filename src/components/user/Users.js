@@ -1,13 +1,13 @@
 import React, { useEffect, useContext } from "react";
-import GithubContext from "../../context/github_finder/context";
+import ConfettiContext from "../../context/confetti_data_storage/context";
 import UserItem from "./UserItem";
 import loading_url from "../../imgs/loading.gif";
 
 const Users = () => {
-  const githubContext = useContext(GithubContext);
-  const { loading, users, fethusers } = githubContext;
+  const githubContext = useContext(ConfettiContext);
+  const { loading, homeInfo, fetchHomeInfo } = githubContext;
   useEffect(() => {
-    fethusers();
+    fetchHomeInfo();
     //eslint-disable-next-line
   }, []);
 
@@ -22,7 +22,7 @@ const Users = () => {
         />
       ) : (
         <div className="row d-flex justify-content-around">
-          {users.map((user, idx) => (
+          {homeInfo.map((user, idx) => (
             <UserItem user={user} key={idx} />
           ))}
         </div>

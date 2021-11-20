@@ -1,11 +1,11 @@
 import React, { useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import loading_url from '../../imgs/loading.gif';
-import GithubContext from '../../context/github_finder/context';
+import ConfettiContext from '../../context/confetti_context/context';
 
 const Profile = () => {
   const params = useParams();
-  const githubContext = useContext(GithubContext);
+  const githubContext = useContext(ConfettiContext);
   const { getUserProfile, userProfile, loading } = githubContext;
   useEffect(() => {
     getUserProfile(params.username);

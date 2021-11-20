@@ -1,4 +1,131 @@
 body {
-  font-family: "Source Sans Pro", sans-serif;
-  background: #e5eff1;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: white;
+}
+
+.btnThemeClr {
+  background: #a763f6;
+}
+
+.homeTitle {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.homeTitle:hover {
+  color: #a763f6;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+}
+
+.loaderCss {
+  width: 10%;
+  margin-top: 20%;
+}
+
+.services {
+  height: 246px;
+  overflow: auto;
+}
+
+.getInTouchBtn {
+  position: relative;
+  top: 22px;
+  font-weight: bold;
+  padding: 5px 30px;
+}
+
+.services-list {
+  margin-right: 10px;
+}
+
+.services-list:hover {
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  margin-right: 0px;
+}
+
+.arrowRight:hover {
+  color: #a763f6;
+}
+
+.removeAutoPadding {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.videoContent {
+  position: relative;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.videoContent video {
+  width: 100%;
+  display: block;
+}
+
+.videoContent:before {
+  content: '';
+  position: absolute;
+  background: linear-gradient(109.15deg, #4c49e3 -1.61%, #341b47 100.61%);
+  mix-blend-mode: multiply;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.videoContent .carousel-caption {
+  width: 40%;
+  text-align: start;
+  font-size: 60px;
+  font-weight: bold;
+  bottom: 20%;
+}
+
+.notTimePadding {
+  border: 0;
+  height: 246px;
+  overflow: auto;
+}
+
+.ntpCardTitle1 {
+  font-weight: bolder;
+  font-size: 32px;
+}
+
+.ntpCardTitle2 {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.containerCards {
+  display: inline-block;
+  position: relative;
+}
+
+.containerCards .projectBtn {
+  position: absolute;
+  left: 70px;
+  bottom: 60px;
+}
+
+.projectTitle {
+  font-size: 45px;
+}
+
+.projectBtn {
+  padding: 5px 15px;
+  background: white;
+  color: black !important;
+  font-size: 24px;
+  box-shadow: -6px -6px black;
+}
+
+.projectBtn:hover {
+  margin-bottom: 5px;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  box-shadow: -8px -8px black;
 }
