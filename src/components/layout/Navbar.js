@@ -6,7 +6,7 @@ import loading_url from '../../imgs/Confetti_logo.png';
 const Navbar = () => {
   return (
     <React.Fragment>
-      <nav className="navbar navbar-expand-lg fixed-top navbar-light">
+      <nav className="navbar navbar-expand-lg navbar-light">
         <Link className="navbar-brand text-info" to="/">
           <img
             src={loading_url}

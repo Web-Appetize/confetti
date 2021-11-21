@@ -2,6 +2,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import ConfettiContext from '../../context/confetti_context/context';
 import sampleWallUrl from '../../imgs/sampleWall.jpg';
+import Footer from '../layout/Footer';
+import { isMobile } from "react-device-detect";
 
 import Loader from './Loader';
 import { Link } from 'react-router-dom';
@@ -115,7 +117,7 @@ const Home = () => {
   if (loading) return <Loader />;
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid homeContainer" style={{width:ww}}>
       <div className="row">
         <div
           id="carouselExampleSlidesOnly"
@@ -132,33 +134,34 @@ const Home = () => {
                 Your browser does not support the video tag.
               </video>
 
-              <div class="carousel-caption d-none d-md-block">
+              <div className="carousel-caption d-none d-md-block">
                 <span>{title}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       {/* services  */}
-      <div class="row pl-5 pr-5 pt-5 pb-0">
-        <div class="col">
+      <div className="row pl-5 pr-5 pt-5 pb-0">
+        <div className="col">
           <span className="homeTitle">HOW CAN WE HELP YOU?</span>
         </div>
-        <div class="w-100"></div>
-        <div class="col">
-          <div class="card services shadow-sm">
-            <ul class="list-group list-group-flush">
+        <div className="w-100"></div>
+        <div className="col">
+          <div className="card services shadow-sm">
+            <ul className="list-group list-group-flush">
               {services.map(({ label, url, description }) => {
                 return (
-                  <Link class="list-group-item p-0" to={url}>
+                  <Link className="list-group-item p-0" to={url}>
                     <li
-                      class="list-group-item text-dark services-list"
+                      className="list-group-item text-dark services-list"
                       onMouseOver={() => setCurrentDesc(description)}
                     >
                       <div className="d-flex justify-content-between">
                         <span>{label}</span>
                         <span>
-                          <i class="fas fa-arrow-right fa-lg arrowRight"></i>
+                          <i className="fas fa-arrow-right fa-lg arrowRight"></i>
                         </span>
                       </div>
                     </li>
@@ -168,15 +171,15 @@ const Home = () => {
             </ul>
           </div>
         </div>
-        <div class="col">
-          <div class="card services shadow-sm">
-            <div class="card-body">
-              <h3 class="card-title">{serviceTitle}</h3>
-              <h6 class="card-subtitle mb-2 text-muted">{sublabel1}</h6>
-              <p class="card-text">{sublabel2}</p>
+        <div className="col">
+          <div className="card services shadow-sm">
+            <div className="card-body">
+              <h3 className="card-title">{serviceTitle}</h3>
+              <h6 className="card-subtitle mb-2 text-muted">{sublabel1}</h6>
+              <p className="card-text">{sublabel2}</p>
               <Link
                 to={getInTouchUrl}
-                class="btn btn-primary btnThemeClr getInTouchBtn"
+                className="btn btn-primary btnThemeClr getInTouchBtn"
               >
                 GET IN TOUCH
               </Link>
@@ -194,30 +197,30 @@ const Home = () => {
         );
       })}
       {/* no time padding  */}
-      <div class="row p-5">
-        <div class="col bg-dark text-white">
-          <div class="card notTimePadding bg-dark">
-            <div class="card-body">
+      <div className="row p-5">
+        <div className="col bg-dark text-white">
+          <div className="card notTimePadding bg-dark">
+            <div className="card-body">
               <span className="ntpCardTitle1">NO TIME-PADDING</span>
-              <p class="card-text">
+              <p className="card-text">
                 DESIGN AGENCIES CHARGE YOU 50% MORE FOR DOING TASKS THAT ARE
                 IRRELIVENT FOR YOUR PROJECT.
               </p>
-              <p class="card-text">THIS IS CALLED “TIME-PADDING”</p>
-              <p class="card-text">
+              <p className="card-text">THIS IS CALLED “TIME-PADDING”</p>
+              <p className="card-text">
                 CONFETTI FOLLOWS A “NO TIME-PADDING” POLICY AND SAVE YOU TIME &
                 MONEY.
               </p>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card notTimePadding">
-            <div class="card-body">
-              <h3 class="card-title ntpCardTitle2">LETS GET YOU SORTED!</h3>
+        <div className="col">
+          <div className="card notTimePadding">
+            <div className="card-body">
+              <h3 className="card-title ntpCardTitle2">LETS GET YOU SORTED!</h3>
               <Link
                 to={getInTouchUrl}
-                class="btn btn-primary btnThemeClr getInTouchBtn"
+                className="btn btn-primary btnThemeClr getInTouchBtn"
               >
                 GET IN TOUCH
               </Link>
@@ -225,6 +228,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
