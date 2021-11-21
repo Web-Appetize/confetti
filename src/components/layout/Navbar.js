@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import loading_url from '../../imgs/Confetti_logo.png';
 
 const Navbar = () => {
+  const [open, setNav] = useState(false);
   return (
     <React.Fragment>
+      <div id="myNav" class={`overlay ${open ? 'w-100' : ''}`}>
+        <div class="overlay-content">
+          <Link to="/">
+            <span>Home </span>
+          </Link>
+          <Link to="/">
+            <span> About Us</span>
+          </Link>
+
+          <Link
+            key="NavGetInTouchUrl"
+            to=""
+            className={`btn btn-primary btnThemeClr NavGetInTouchUrl ${
+              open ? '' : 'd-none'
+            }`}
+          >
+            GET IN TOUCH
+          </Link>
+        </div>
+      </div>
       <nav className="navbar navbar-expand-lg navbar-light">
         <Link className="navbar-brand text-info" to="/">
           <img
@@ -17,18 +38,23 @@ const Navbar = () => {
           />
         </Link>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler customToggler"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          {open ? (
+            <i
+              class="fas fa-times text-white"
+              onClick={() => setNav(!open)}
+            ></i>
+          ) : (
+            <i class="fas fa-bars text-white" onClick={() => setNav(!open)}></i>
+          )}
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item ">
               <Link className="nav-link" to="/">

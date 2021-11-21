@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { isMobile } from 'react-device-detect';
 
-const ww = window.innerWidth - 100;
-
-const ContainerCards = ({ title, btnTxt, backImage, url, isLast }) => {
+const ContainerCards = ({ title, btnTxt, backImage, url }) => {
   return (
-    <div className={`row pl-5 pr-5 pt-5 ${isLast ? 'pb-0' : 'pb-0'}`}>
-      <div className="projectTitle">{title}</div>
+    <div
+      className={`row ${isMobile ? 'pl-1 pr-1 pt-1' : 'pl-5 pr-5 pt-5'} pb-0`}
+    >
       <div className="containerCards">
-        <img src={backImage} alt={title} width={ww} height="600" />
+        <div className="col-12 projectTitle">{title}</div>
+        <img src={backImage} alt={title} width={'100%'} height="600" />
         <Link to={url}>
           <div className="projectBtn">{btnTxt}</div>
         </Link>

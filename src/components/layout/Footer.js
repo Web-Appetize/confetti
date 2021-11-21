@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { isMobile } from 'react-device-detect';
 // import footerWallImg from '../../imgs/footerWall.jpg';
 
 const Footer = () => {
   return (
     <div>
       <div className="row">
-        <div className="col footer bg-dark text-white">
+        <div
+          className={`col ${
+            isMobile ? 'footerMobile' : 'footer'
+          } bg-dark text-white`}
+        >
           <div
             className="card  bg-dark"
             // style={{ backgroundImage: `url(${footerWallImg})` }}
