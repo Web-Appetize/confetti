@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../../layout/Footer';
 import { Link } from 'react-router-dom';
 import ContainerCards from '../../layout/ContainerCards';
@@ -13,6 +13,7 @@ const Home = ({
   currentDesc,
   setCurrentDesc,
 }) => {
+  const [slider, setSlider] = useState(false);
   const {
     title: serviceTitle,
     sublabel1,
@@ -21,7 +22,12 @@ const Home = ({
   } = currentDesc;
 
   return (
-    <div className="container-fluid homeContainer" style={{ width: ww }}>
+    <div
+      className={`container-fluid homeContainer ${
+        slider ? 'disableYScroll' : ''
+      }`}
+      style={{ width: ww }}
+    >
       <div className="row">
         <div
           id="carouselExampleSlidesOnly"
@@ -92,11 +98,25 @@ const Home = ({
       </div>
       {containerCards.map((project, idx) => {
         return (
-          <ContainerCards
-            key={idx}
-            {...project}
-            isLast={idx === containerCards.length - 1}
-          />
+          <>
+            <ContainerCards
+              key={idx}
+              {...project}
+              showProject={() => setSlider(!slider)}
+              isLast={idx === containerCards.length - 1}
+            />
+            <div class={`slider ${slider ? '' : 'close'}`}>
+              <div className="transparent"></div>
+              <div className="content">
+                <div className="titleBar">
+                  <i
+                    class="fas fa-times"
+                    onClick={() => setSlider(!slider)}
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </>
         );
       })}
       <div className="row p-1">

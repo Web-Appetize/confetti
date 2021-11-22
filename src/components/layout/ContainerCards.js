@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { isMobile } from 'react-device-detect';
 
-const ContainerCards = ({ title, btnTxt, backImage, url }) => {
+const ContainerCards = ({ title, btnTxt, backImage, url, showProject }) => {
   return (
     <div
       className={`row ${isMobile ? 'pl-1 pr-1 pt-1' : 'pl-5 pr-5 pt-5'} pb-0`}
@@ -11,9 +11,15 @@ const ContainerCards = ({ title, btnTxt, backImage, url }) => {
       <div className="containerCards">
         <div className="col-12 projectTitle">{title}</div>
         <img src={backImage} alt={title} width={'100%'} height="600" />
-        <Link to={url}>
-          <div className="projectBtn">{btnTxt}</div>
-        </Link>
+        {isMobile ? (
+          <div className="projectBtn" onClick={showProject}>
+            {btnTxt}
+          </div>
+        ) : (
+          <Link to={url}>
+            <div className="projectBtn">{btnTxt}</div>
+          </Link>
+        )}
       </div>
     </div>
   );
