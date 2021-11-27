@@ -5,15 +5,26 @@ import loading_url from '../../imgs/Confetti_logo.png';
 
 const Navbar = () => {
   const [open, setNav] = useState(false);
+  const tabs = ['ContactUs', 'AboutUs'];
+  let tabExist = false;
+  tabs.forEach((tab) => {
+    if (!tabExist) {
+      tabExist = window.location.href.indexOf(tab) !== -1;
+    }
+  });
+
   return (
     <React.Fragment>
-      <div id="myNav" class={`overlay ${open ? 'w-100' : ''}`}>
-        <div class="overlay-content">
+      <div id="myNav" className={`overlay ${open ? 'w-100' : ''}`}>
+        <div className="overlay-content">
           <Link to="/">
             <span>Home </span>
           </Link>
-          <Link to="/">
+          <Link to="/AboutUs">
             <span> About Us</span>
+          </Link>
+          <Link to="/ContactUs">
+            <span> Contact Us</span>
           </Link>
 
           <Link
@@ -27,7 +38,11 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <nav className="navbar navbar-expand-lg navbar-light">
+      <nav
+        className={`navbar navbar-expand-lg navbar-light ${
+          tabExist ? 'shadow-sm' : ''
+        }`}
+      >
         <Link className="navbar-brand text-info" to="/">
           <img
             src={loading_url}
@@ -46,11 +61,14 @@ const Navbar = () => {
         >
           {open ? (
             <i
-              class="fas fa-times text-white"
+              className="fas fa-times text-white"
               onClick={() => setNav(!open)}
             ></i>
           ) : (
-            <i class="fas fa-bars text-white" onClick={() => setNav(!open)}></i>
+            <i
+              className="fas fa-bars text-white"
+              onClick={() => setNav(!open)}
+            ></i>
           )}
         </button>
 
@@ -58,15 +76,31 @@ const Navbar = () => {
           <ul className="navbar-nav ml-auto">
             <li className="nav-item ">
               <Link className="nav-link" to="/">
-                <button type="button" className="btn btn-default text-white">
+                <button
+                  type="button"
+                  className={`${tabExist ? '' : 'text-white'} btn btn-default`}
+                >
                   Home
                 </button>
               </Link>
             </li>
             <li className="nav-item ">
               <Link className="nav-link" to="AboutUs">
-                <button type="button" className="btn btn-default text-white">
+                <button
+                  type="button"
+                  className={`${tabExist ? '' : 'text-white'} btn btn-default`}
+                >
                   About us
+                </button>
+              </Link>
+            </li>
+            <li className="nav-item ">
+              <Link className="nav-link" to="ContactUs">
+                <button
+                  type="button"
+                  className={`${tabExist ? '' : 'text-white'} btn btn-default`}
+                >
+                  Contact us
                 </button>
               </Link>
             </li>

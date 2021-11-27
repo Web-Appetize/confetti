@@ -171,6 +171,11 @@ body {
   margin-right: 10px;
 }
 
+.iconBorder {
+  border: 1px solid gray;
+  padding: 1px 10px;
+}
+
 .footerIcon:hover {
   background: #a763f6;
   color: white;
@@ -308,4 +313,51 @@ body {
   top: 100%;
   height: 0;
   display: none;
+}
+
+.content .dataContainer {
+  margin-top: -3rem;
+  font-size: 25px;
+  padding: 10px;
+  text-align: left;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content .title {
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hAuto {
+  height: auto;
+}
+
+.contactUsCard input {
+  border-radius: 0;
+  border: 1px solid gray;
+}
+
+.contactUsCard input::placeholder {
+  color: gainsboro;
+}
+
+.contactUsCard .input-group-text {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid;
+  border-radius: 0;
+}
+
+.contactUsCardNoBorder input {
+  border: 0;
+  border-bottom: 1px solid;
+  pointer-events: none;
+}
+
+.contactUsDesktopModal .modal-dialog {
+  margin-top: 10%;
 }

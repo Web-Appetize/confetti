@@ -105,14 +105,28 @@ const Home = ({
               showProject={() => setSlider(!slider)}
               isLast={idx === containerCards.length - 1}
             />
-            <div class={`slider ${slider ? '' : 'close'}`}>
+            <div className={`slider ${slider ? '' : 'close'}`}>
               <div className="transparent"></div>
               <div className="content">
                 <div className="titleBar">
                   <i
-                    class="fas fa-times"
+                    className="fas fa-times"
                     onClick={() => setSlider(!slider)}
                   ></i>
+                </div>
+                <div className="dataContainer">
+                  <div className="title">LOCKED FOR CONFEDENTIALITY</div>
+                  <div>
+                    WE VALUE OUR CLIENT’S REQUEST TO KEEP CERTAIN DESIGNS {'&'}
+                    INSIGHTS PRIVATE. NO WONDER PEOPLE LOVE WORKING WITH
+                    CONFETTI!
+                  </div>
+                  <Link
+                    to={getInTouchUrl}
+                    className="btn btn-primary btnThemeClr getInTouchBtnMobile w-100 p-3 mt-2 mb-2"
+                  >
+                    GET IN TOUCH
+                  </Link>
                 </div>
               </div>
             </div>

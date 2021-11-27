@@ -8,7 +8,7 @@ const ContainerCards = ({ title, btnTxt, backImage, url, showProject }) => {
     <div
       className={`row ${isMobile ? 'pl-1 pr-1 pt-1' : 'pl-5 pr-5 pt-5'} pb-0`}
     >
-      <div className="containerCards">
+      <div className="containerCards col-12">
         <div className="col-12 projectTitle">{title}</div>
         <img src={backImage} alt={title} width={'100%'} height="600" />
         {isMobile ? (
