@@ -9,6 +9,7 @@ import {
   SET_PROJECT_INFO,
   SET_NOTIME_INFO,
   SET_CONNECT_INFO,
+  SET_ABOUT_INFO,
 } from '../Types';
 
 const CCaction = (props) => {
@@ -18,6 +19,7 @@ const CCaction = (props) => {
     projectInfo: [],
     noTimeInfo: {},
     connectInfo: {},
+    aboutInfo: {},
     loading: false,
   };
   const hostName = 'https://confettiportfolio.herokuapp.com';
@@ -59,6 +61,12 @@ const CCaction = (props) => {
     dispatch({ type: SET_NOTIME_INFO, payload: res.data });
   }
 
+  async function fetchAboutInfo() {
+    setloading();
+    let res = await axios.get(`${hostName}/about`);
+    dispatch({ type: SET_ABOUT_INFO, payload: res.data });
+  }
+
   async function fetchConnectInfo() {
     setloading();
     let res = await axios.get(`${hostName}/connect`);
@@ -76,12 +84,14 @@ const CCaction = (props) => {
         projectInfo: state.projectInfo,
         noTimeInfo: state.noTimeInfo,
         connectInfo: state.connectInfo,
+        aboutInfo: state.aboutInfo,
         loading: state.loading,
         fetchHomeInfo,
         fetchServiceInfo,
         fetchProjectInfo,
         fetchNoTimeInfo,
         fetchConnectInfo,
+        fetchAboutInfo,
       }}
     >
       {props.children}

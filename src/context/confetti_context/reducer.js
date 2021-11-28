@@ -5,6 +5,7 @@ import {
   SET_PROJECT_INFO,
   SET_NOTIME_INFO,
   SET_CONNECT_INFO,
+  SET_ABOUT_INFO
 } from '../Types';
 export default (state, action) => {
   switch (action.type) {
@@ -18,6 +19,8 @@ export default (state, action) => {
       return { ...state, noTimeInfo: action.payload, loading: false };
     case SET_CONNECT_INFO:
       return { ...state, connectInfo: action.payload, loading: false };
+    case SET_ABOUT_INFO:
+      return { ...state, aboutInfo: action.payload, loading: false };
     case SET_LOADING:
       return { ...state, loading: true };
     default:

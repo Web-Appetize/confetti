@@ -1,6 +1,6 @@
 // plugins
 import { isMobile } from 'react-device-detect';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import ConfettiContext from '../../context/confetti_context/context';
 
 // components
@@ -10,13 +10,17 @@ import Loader from './Loader';
 
 const ContactUsContainer = () => {
   const githubContext = useContext(ConfettiContext);
-  const { loading } = githubContext;
+  const { loading, connectInfo, fetchConnectInfo } = githubContext;
+  useEffect(() => {
+    fetchConnectInfo();
+    //eslint-disable-next-line
+  }, []);
+  const data = {
+    connectInfo,
+  };
 
-  const data = {};
-
-  if (loading) return <Loader />;
+  if (loading || !Object.keys(connectInfo).length) return <Loader />;
   if (isMobile) return <MobileContactUs {...data} />;
-
   return <ContactUs {...data} />;
 };
 

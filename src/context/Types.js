@@ -1,6 +1,7 @@
-export const SET_HOME_INFO = "SET_HOME_INFO";
-export const SET_PROJECT_INFO = "SET_PROJECT_INFO";
-export const SET_LOADING = "SET_LOADING";
-export const SET_SERVICE_INFO = "SET_SERVICE_INFO";
-export const SET_NOTIME_INFO = "SET_NOTIME_INFO";
-export const SET_CONNECT_INFO = "SET_CONNECT_INFO";
+export const SET_HOME_INFO = 'SET_HOME_INFO';
+export const SET_PROJECT_INFO = 'SET_PROJECT_INFO';
+export const SET_LOADING = 'SET_LOADING';
+export const SET_SERVICE_INFO = 'SET_SERVICE_INFO';
+export const SET_NOTIME_INFO = 'SET_NOTIME_INFO';
+export const SET_CONNECT_INFO = 'SET_CONNECT_INFO';
+export const SET_ABOUT_INFO = 'SET_ABOUT_INFO';

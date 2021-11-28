@@ -1,13 +1,15 @@
 import React from 'react';
 import { isMobile } from 'react-device-detect';
 const Footer = ({
-  address: { title, mail: addressMail, phone, company, address },
+  address: fullAddress,
   instagram,
   mail,
   linkedin,
   behance,
   dribble,
 }) => {
+  if (!fullAddress) return null;
+  const { title, mail: addressMail, phone, company, address } = fullAddress;
   return (
     <div>
       <div className="row">
@@ -59,7 +61,7 @@ const Footer = ({
               </div>
               <div className="footerTitle4">
                 {company} <br /> {address[0].text}
-                 <br /> {address[1].text}
+                <br /> {address[1].text}
               </div>
               <br />
             </div>

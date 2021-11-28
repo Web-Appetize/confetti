@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import ContainerCards from '../../layout/ContainerCards';
 const ww = window.innerWidth - 15;
 
-const ContactUs = () => {
+const ContactUs = ({connectInfo}) => {
+  const { instagram, mail, linkedin, behance, dribble } = connectInfo;
   return (
     <div className="container-fluid" style={{ width: ww }}>
       <div className="row p-1">
@@ -43,35 +44,35 @@ const ContactUs = () => {
                 </div>
               </form>
               <div className="text-right">
-                <Link to="">
-                  <span className="footerIcon iconBorder">
+              <span onClick={() => window.open(mail)}>
+                  <span className="footerIcon">
                     <i className="far fa-envelope"></i>
                   </span>
-                </Link>
+                </span>
 
-                <Link to="">
-                  <span className="footerIcon iconBorder">
+                <span onClick={() => window.open(instagram)}>
+                  <span className="footerIcon">
                     <i className="fab fa-instagram"></i>
                   </span>
-                </Link>
+                </span>
 
-                <Link to="">
-                  <span className="footerIcon iconBorder">
+                <span onClick={() => window.open(linkedin)}>
+                  <span className="footerIcon">
                     <i className="fab fa-linkedin-in"></i>
                   </span>
-                </Link>
+                </span>
 
-                <Link to="">
-                  <span className="footerIcon iconBorder">
+                <span onClick={() => window.open(behance)}>
+                  <span className="footerIcon">
                     <i className="fab fa-behance"></i>
                   </span>
-                </Link>
+                </span>
 
-                <Link to="">
-                  <span className="footerIcon iconBorder">
+                <span onClick={() => window.open(dribble)}>
+                  <span className="footerIcon">
                     <i className="fas fa-basketball-ball"></i>
                   </span>
-                </Link>
+                </span>
               </div>
             </div>
           </div>
@@ -183,7 +184,7 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {connectInfo && <Footer {...connectInfo} />}
     </div>
   );
 };
