@@ -23,13 +23,9 @@ const Navbar = () => {
           <Link to="">
             <span> About Us</span>
           </Link>
-          <Link to="/ContactUs">
-            <span> Contact Us</span>
-          </Link>
-
           <Link
             key="NavGetInTouchUrl"
-            to=""
+            to="/ContactUs"
             className={`btn btn-primary btnThemeClr NavGetInTouchUrl ${
               open ? '' : 'd-none'
             }`}
@@ -96,16 +92,6 @@ const Navbar = () => {
             </li>
             <li className="nav-item ">
               <Link className="nav-link" to="ContactUs">
-                <button
-                  type="button"
-                  className={`${tabExist ? '' : 'text-white'} btn btn-default`}
-                >
-                  Contact us
-                </button>
-              </Link>
-            </li>
-            <li className="nav-item ">
-              <Link className="nav-link" to="AboutUs">
                 <button
                   type="button"
                   className="btn btnThemeClr text-white font-weight-bold pl-4 pr-4"

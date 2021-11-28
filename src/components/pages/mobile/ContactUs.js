@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import ContainerCards from '../../layout/ContainerCards';
 const ww = window.innerWidth - 15;
 
-const ContactUs = ({connectInfo}) => {
+const ContactUs = ({ connectInfo }) => {
   const { instagram, mail, linkedin, behance, dribble } = connectInfo;
   return (
     <div className="container-fluid" style={{ width: ww }}>
@@ -16,7 +16,7 @@ const ContactUs = ({connectInfo}) => {
               <h3 className="card-title ntpCardTitle2 text-normal">
                 GET IN TOUCH
               </h3>
-              <form>
+              <div>
                 <div className="form-row align-items-center">
                   <div className="col-12">
                     <label className="sr-only" for="inlineFormInputGroup">
@@ -42,9 +42,9 @@ const ContactUs = ({connectInfo}) => {
                     </div>
                   </div>
                 </div>
-              </form>
+              </div>
               <div className="text-right">
-              <span onClick={() => window.open(mail)}>
+                <span onClick={() => window.open(mail)}>
                   <span className="footerIcon">
                     <i className="far fa-envelope"></i>
                   </span>
@@ -81,7 +81,7 @@ const ContactUs = ({connectInfo}) => {
           <div className="card contactUsCard hAuto shadow-sm border-0">
             <div className="card-body">
               <span className="ntpCardTitle1">WE’D LOVE TO HEAR FROM YOU!</span>
-              <form action="/action_page.php">
+              <div>
                 <div className="form-group">
                   <label for="name">Name :</label>
                   <input
@@ -90,7 +90,6 @@ const ContactUs = ({connectInfo}) => {
                     id="name"
                     placeholder="RISHABH JAIN"
                     name="name"
-                    required
                   />
                 </div>
                 <div className="form-group">
@@ -101,7 +100,6 @@ const ContactUs = ({connectInfo}) => {
                     id="email"
                     placeholder="NAME@EXAMPLE.COM"
                     name="email"
-                    required
                   />
                 </div>
                 <div className="form-group">
@@ -112,7 +110,6 @@ const ContactUs = ({connectInfo}) => {
                     id="company"
                     placeholder="'YOUR COMPANY'"
                     name="company"
-                    required
                   />
                 </div>
                 <div className="form-group">
@@ -123,7 +120,6 @@ const ContactUs = ({connectInfo}) => {
                     id="subject"
                     placeholder="UI / UX DESIGN"
                     name="subject"
-                    required
                   />
                 </div>
                 <div className="form-group">
@@ -134,7 +130,6 @@ const ContactUs = ({connectInfo}) => {
                     id="message"
                     placeholder="HOW CAN WE HELP YOU ?"
                     name="message"
-                    required
                   />
                 </div>
                 <button
@@ -145,7 +140,7 @@ const ContactUs = ({connectInfo}) => {
                 >
                   SEND MESSAGE
                 </button>
-              </form>
+              </div>
             </div>
           </div>
         </div>
