@@ -2,12 +2,22 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import GFcontext from './context';
 import GFreducer from './reducer';
-import { GET_HOME_INFO, GET_PROJECT_INFO, SET_LOADING } from '../Types';
+import {
+  SET_HOME_INFO,
+  SET_LOADING,
+  SET_SERVICE_INFO,
+  SET_PROJECT_INFO,
+  SET_NOTIME_INFO,
+  SET_CONNECT_INFO,
+} from '../Types';
 
-const GFaction = (props) => {
+const CCaction = (props) => {
   const initialState = {
     homeInfo: {},
-    userProfile: {},
+    serviceInfo: [],
+    projectInfo: [],
+    noTimeInfo: {},
+    connectInfo: {},
     loading: false,
   };
   const hostName = 'https://confettiportfolio.herokuapp.com';
@@ -16,37 +26,62 @@ const GFaction = (props) => {
   async function fetchHomeInfo() {
     setloading();
     let res = await axios.get(`${hostName}/home`);
-    dispatch({ type: GET_HOME_INFO, payload: res.data });
+    dispatch({ type: SET_HOME_INFO, payload: res.data });
+
+    let serviceRes = await axios.get(`${hostName}/services`);
+    dispatch({ type: SET_SERVICE_INFO, payload: serviceRes.data });
+
+    let projectRes = await axios.get(`${hostName}/projects`);
+    dispatch({ type: SET_PROJECT_INFO, payload: projectRes.data });
+
+    let notTimeRes = await axios.get(`${hostName}/nopad`);
+    dispatch({ type: SET_NOTIME_INFO, payload: notTimeRes.data });
+
+    let connectRes = await axios.get(`${hostName}/connect`);
+    dispatch({ type: SET_CONNECT_INFO, payload: connectRes.data });
   }
 
-  const searchUsers = async (text) => {
+  async function fetchServiceInfo() {
     setloading();
-    const res = await axios.get(
-      `https://api.github.com/search/users?q=${text}`
-    );
-    dispatch({ type: GET_HOME_INFO, payload: res.data.items });
-  };
+    let res = await axios.get(`${hostName}/services`);
+    dispatch({ type: SET_SERVICE_INFO, payload: res.data });
+  }
 
-  const getUserProfile = async (username) => {
+  async function fetchProjectInfo() {
     setloading();
-    const res = await axios.get(
-      `https://api.github.com/search/users?q=${
-        username.indexOf(':') > -1 ? username.replace(':', '') : username
-      }`
-    );
-    dispatch({ type: GET_PROJECT_INFO, payload: res.data.items[0] });
-  };
+    let res = await axios.get(`${hostName}/projects`);
+    dispatch({ type: SET_PROJECT_INFO, payload: res.data });
+  }
 
-  const setloading = () => dispatch({ type: SET_LOADING });
+  async function fetchNoTimeInfo() {
+    setloading();
+    let res = await axios.get(`${hostName}/nopad`);
+    dispatch({ type: SET_NOTIME_INFO, payload: res.data });
+  }
+
+  async function fetchConnectInfo() {
+    setloading();
+    let res = await axios.get(`${hostName}/connect`);
+    dispatch({ type: SET_CONNECT_INFO, payload: res.data });
+  }
+
+  const setloading = (status) =>
+    dispatch({ type: SET_LOADING, payload: status });
+
   return (
     <GFcontext.Provider
       value={{
         homeInfo: state.homeInfo,
-        userProfile: state.userProfile,
+        serviceInfo: state.serviceInfo,
+        projectInfo: state.projectInfo,
+        noTimeInfo: state.noTimeInfo,
+        connectInfo: state.connectInfo,
         loading: state.loading,
-        searchUsers,
         fetchHomeInfo,
-        getUserProfile,
+        fetchServiceInfo,
+        fetchProjectInfo,
+        fetchNoTimeInfo,
+        fetchConnectInfo,
       }}
     >
       {props.children}
@@ -54,4 +89,4 @@ const GFaction = (props) => {
   );
 };
 
-export default GFaction;
+export default CCaction;

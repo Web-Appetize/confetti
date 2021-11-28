@@ -168,7 +168,7 @@ const ContactUs = () => {
             </div>
             <div className="modal-footer">
               <Link
-                to="/"
+                to=""
                 type="button"
                 className="btn btn-default btnThemeClr text-white"
                 data-dismiss="modal"

@@ -12,13 +12,15 @@ const Home = ({
   containerCards,
   currentDesc,
   setCurrentDesc,
+  noTimeInfo,
+  connectInfo,
 }) => {
   const {
-    title: serviceTitle,
-    sublabel1,
-    sublabel2,
-    getInTouchUrl,
-  } = currentDesc;
+    title: currentServiceTitle,
+    imageURL,
+    description: currentServiceDescription = [],
+    getInTouchUrl = '',
+  } = currentDesc || services[0];
 
   return (
     <div className="container-fluid homeContainer" style={{ width: ww }}>
@@ -38,8 +40,20 @@ const Home = ({
                 Your browser does not support the video tag.
               </video>
 
-              <div className="carousel-caption d-none d-md-block">
+              <div className="carousel-caption d-md-block">
                 <span>{title}</span>
+              </div>
+              <div className="carousel-caption m-auto">
+                <div class="mouse_scroll mt-5">
+                  <div class="mouse">
+                    <div class="wheel"></div>
+                  </div>
+                  <div>
+                    <span class="m_scroll_arrows unu"></span>
+                    <span class="m_scroll_arrows doi"></span>
+                    <span class="m_scroll_arrows trei"></span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -54,19 +68,15 @@ const Home = ({
         <div className="col">
           <div className="card services shadow-sm">
             <ul className="list-group list-group-flush">
-              {services.map(({ label, url, description }, idx) => {
+              {services.map(({ title, url = '/' }, idx) => {
                 return (
-                  <Link
-                    key={idx}
-                    className="list-group-item p-0"
-                    to={url}
-                  >
+                  <Link key={idx} className="list-group-item p-0" to={url}>
                     <li
                       className="list-group-item text-dark services-list"
-                      onMouseOver={() => setCurrentDesc(description)}
+                      onMouseOver={() => setCurrentDesc(services[idx])}
                     >
                       <div className="d-flex justify-content-between">
-                        <span>{label}</span>
+                        <span>{title}</span>
                         <span>
                           <i className="fas fa-arrow-right fa-lg arrowRight"></i>
                         </span>
@@ -81,11 +91,24 @@ const Home = ({
         <div className="col">
           <div className="card services shadow-sm">
             <div className="card-body">
-              <h3 className="card-title">{serviceTitle}</h3>
-              <h6 className="card-subtitle mb-2 text-muted">{sublabel1}</h6>
-              <p className="card-text">{sublabel2}</p>
+              <h3 className="card-title mb-3">
+                {currentServiceTitle}{' '}
+                <span>
+                  <img
+                    alt={currentServiceTitle}
+                    className="img-responsive align-bottom"
+                    src={imageURL}
+                    height="30"
+                  />
+                </span>
+              </h3>
+              {currentServiceDescription.map(({ text, id }) => (
+                <h6 key={id} className="card-subtitle mb-3">
+                  {text}
+                </h6>
+              ))}
+
               <Link
-                key={sublabel2}
                 to={getInTouchUrl}
                 className="btn btn-primary btnThemeClr getInTouchBtn"
               >
@@ -105,24 +128,20 @@ const Home = ({
           />
         );
       })}
-      <div className="row p-5">
+      <div className="row p-5 m-1">
         <div className="col bg-dark text-white">
           <div className="card notTimePadding bg-dark">
             <div className="card-body">
-              <span className="ntpCardTitle1">NO TIME-PADDING</span>
-              <p className="card-text">
-                DESIGN AGENCIES CHARGE YOU 50% MORE FOR DOING TASKS THAT ARE
-                IRRELIVENT FOR YOUR PROJECT.
-              </p>
-              <p className="card-text">THIS IS CALLED “TIME-PADDING”</p>
-              <p className="card-text">
-                CONFETTI FOLLOWS A “NO TIME-PADDING” POLICY AND SAVE YOU TIME &
-                MONEY.
-              </p>
+              <span className="ntpCardTitle1"> {noTimeInfo.title}</span>
+              {noTimeInfo.text.map(({ text, id }) => (
+                <p key={id} className="card-text">
+                  {text}
+                </p>
+              ))}
             </div>
           </div>
         </div>
-        <div className="col">
+        <div className="col shadow-sm">
           <div className="card notTimePadding">
             <div className="card-body">
               <h3 className="card-title ntpCardTitle2">LETS GET YOU SORTED!</h3>
@@ -137,7 +156,7 @@ const Home = ({
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer {...connectInfo} />
     </div>
   );
 };

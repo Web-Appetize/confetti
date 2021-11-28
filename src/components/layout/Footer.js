@@ -1,9 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { isMobile } from 'react-device-detect';
-// import footerWallImg from '../../imgs/footerWall.jpg';
-
-const Footer = () => {
+const Footer = ({
+  address: { title, mail: addressMail, phone, company, address },
+  instagram,
+  mail,
+  linkedin,
+  behance,
+  dribble,
+}) => {
   return (
     <div>
       <div className="row">
@@ -19,43 +23,43 @@ const Footer = () => {
             <div className="card-body">
               <div className="footerTitle1">CONNECT WITH US!</div>
               <div>
-                <Link to="">
+                <span onClick={() => window.open(mail)}>
                   <span className="footerIcon">
                     <i className="far fa-envelope"></i>
                   </span>
-                </Link>
+                </span>
 
-                <Link to="">
+                <span onClick={() => window.open(instagram)}>
                   <span className="footerIcon">
                     <i className="fab fa-instagram"></i>
                   </span>
-                </Link>
+                </span>
 
-                <Link to="">
+                <span onClick={() => window.open(linkedin)}>
                   <span className="footerIcon">
                     <i className="fab fa-linkedin-in"></i>
                   </span>
-                </Link>
+                </span>
 
-                <Link to="">
+                <span onClick={() => window.open(behance)}>
                   <span className="footerIcon">
                     <i className="fab fa-behance"></i>
                   </span>
-                </Link>
+                </span>
 
-                <Link to="">
+                <span onClick={() => window.open(dribble)}>
                   <span className="footerIcon">
                     <i className="fas fa-basketball-ball"></i>
                   </span>
-                </Link>
+                </span>
               </div>
-              <div className="footerTitle2">GURGAON</div>
+              <div className="footerTitle2">{title}</div>
               <div className="footerTitle3">
-                CONTACT@CONFETTI.COM <br /> +91 7817920743{' '}
+                {addressMail} <br /> {phone}{' '}
               </div>
               <div className="footerTitle4">
-                CONFETTI <br /> GROUND FLOOR, 361, SECTOR 56 <br /> GURGAON
-                201301
+                {company} <br /> {address[0].text}
+                 <br /> {address[1].text}
               </div>
               <br />
             </div>

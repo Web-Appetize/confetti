@@ -17,10 +17,10 @@ const Navbar = () => {
     <React.Fragment>
       <div id="myNav" className={`overlay ${open ? 'w-100' : ''}`}>
         <div className="overlay-content">
-          <Link to="/">
+          <Link to="">
             <span>Home </span>
           </Link>
-          <Link to="/AboutUs">
+          <Link to="">
             <span> About Us</span>
           </Link>
           <Link to="/ContactUs">
@@ -43,7 +43,7 @@ const Navbar = () => {
           tabExist ? 'shadow-sm' : ''
         }`}
       >
-        <Link className="navbar-brand text-info" to="/">
+        <Link className="navbar-brand text-info" to="">
           <img
             src={loading_url}
             alt="Confetti"
@@ -75,7 +75,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item ">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="">
                 <button
                   type="button"
                   className={`${tabExist ? '' : 'text-white'} btn btn-default`}
