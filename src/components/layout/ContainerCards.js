@@ -33,7 +33,7 @@ const ContainerCards = ({
         <div
           className="projectBtn"
           onClick={() =>
-            !locked ? showProject() : redirectPage('/projectList')
+            locked ? showProject() : redirectPage('/projectList')
           }
         >
           {btnTxt}
