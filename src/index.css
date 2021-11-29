@@ -9,6 +9,10 @@ body {
   background: #a763f6;
 }
 
+.themeClr {
+  color: #a763f6;
+}
+
 .homeTitle {
   font-size: 48px;
   font-weight: bold;
@@ -600,7 +604,7 @@ body {
   background-position: center;
 }
 
-.cardBackImgMobile{
+.cardBackImgMobile {
   background-image: url('./imgs/star.svg');
   background-repeat: no-repeat;
   background-position: right;
@@ -610,4 +614,59 @@ body {
   background-image: url('./imgs/footerWall.svg');
   background-repeat: no-repeat;
   background-position: right;
+}
+
+.aboutUsStarCard-1 {
+  background-image: url('./imgs/star.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50px;
+}
+
+.aboutUsStarCard-2 {
+  background-image: url('./imgs/star.svg');
+  background-repeat: no-repeat;
+  background-position: left;
+  height: 50px;
+}
+
+.aboutUsStarCard-3 {
+  background-image: url('./imgs/star.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 50px;
+}
+
+.fs-55 {
+  font-size: 55px;
+}
+
+.w-18 {
+  width: 18%;
+}
+
+.thatsUstext {
+  background: #6e55b0;
+  color: white;
+  padding: 5px;
+  border-left: 5px solid black;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w700 {
+  width: 700px;
+}
+
+.testimonial {
+  background-color: #a763f6;
+  color: white;
+  width: 68%;
+  border-radius: 5px;
+}
+
+.fsstar {
+  color: #f3d436;
 }

@@ -5,5 +5,8 @@ export const SET_SERVICE_INFO = 'SET_SERVICE_INFO';
 export const SET_NOTIME_INFO = 'SET_NOTIME_INFO';
 export const SET_CONNECT_INFO = 'SET_CONNECT_INFO';
 export const SET_ABOUT_INFO = 'SET_ABOUT_INFO';
+export const SET_SORTED_INFO = 'SET_SORTED_INFO';
+export const SET_LOCK_INFO = 'SET_LOCK_INFO';
+export const SET_MSGSENT_INFO = 'SET_MSGSENT_INFO';
 export const SET_TABS = 'SET_TABS';
 

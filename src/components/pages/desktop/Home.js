@@ -110,7 +110,7 @@ const Home = ({
               ))}
 
               <Link
-                to={getInTouchUrl}
+                to="/contactUs"
                 className="btn btn-primary btnThemeClr getInTouchBtn"
               >
                 GET IN TOUCH
@@ -150,7 +150,7 @@ const Home = ({
               <h3 className="card-title ntpCardTitle2">LETS GET YOU SORTED!</h3>
               <Link
                 key={getInTouchUrl}
-                to={getInTouchUrl}
+                to="/contactUs"
                 className="btn btn-primary btnThemeClr NavGetInTouchUrl ml-0"
               >
                 GET IN TOUCH

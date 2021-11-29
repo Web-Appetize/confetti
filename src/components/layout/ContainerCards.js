@@ -8,7 +8,7 @@ const ContainerCards = ({
   projectType,
   title: btnTxt,
   imageURL,
-  url = '',
+  url = '/ProjectList',
   showProject,
 }) => {
   return (

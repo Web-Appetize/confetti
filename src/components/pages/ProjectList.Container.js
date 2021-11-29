@@ -4,42 +4,37 @@ import React, { useContext, useEffect } from 'react';
 import ConfettiContext from '../../context/confetti_context/context';
 
 // components
-import MobileAboutUs from './mobile/AboutUs';
-import AboutUs from './desktop/AboutUs';
+import MobileProjectList from './mobile/ProjectList';
+import ProjectList from './desktop/ProjectList';
 import Loader from './Loader';
 
-const AboutUsContainer = () => {
+const ProjectListContainer = () => {
   const githubContext = useContext(ConfettiContext);
   const {
     loading,
-    aboutInfo,
-    fetchAboutInfo,
     fetchConnectInfo,
-    fetchNoTimeInfo,
-    noTimeInfo,
+    fetchProjectInfo,
     connectInfo,
+    projectInfo
   } = githubContext;
   useEffect(() => {
-    fetchAboutInfo();
     fetchConnectInfo();
-    fetchNoTimeInfo();
+    fetchProjectInfo();
     //eslint-disable-next-line
   }, []);
   const data = {
-    aboutInfo,
     connectInfo,
-    noTimeInfo
+    projectInfo
   };
 
   if (
     loading ||
-    !Object.keys(aboutInfo).length ||
     !Object.keys(connectInfo).length ||
-    !Object.keys(noTimeInfo).length
+    !Object.keys(projectInfo).length
   )
     return <Loader />;
-  if (isMobile) return <MobileAboutUs {...data} />;
-  return <AboutUs {...data} />;
+  if (isMobile) return <MobileProjectList {...data} />;
+  return <ProjectList {...data} />;
 };
 
-export default AboutUsContainer;
+export default ProjectListContainer;

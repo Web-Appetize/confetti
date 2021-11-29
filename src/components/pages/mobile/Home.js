@@ -64,7 +64,7 @@ const Home = ({
             ))}
 
             <Link
-              to={getInTouchUrl}
+              to="/contactUs"
               className="btn btn-primary btnThemeClr getInTouchBtnMobile w-100 p-3 mt-2 mb-2"
             >
               GET IN TOUCH
@@ -106,7 +106,6 @@ const Home = ({
           </div>
         </div>
       </div>
-
       <div className="row pl-1 pr-1 pt-1 pb-0">
         <div className="col">
           <span className="projectTitle">
@@ -168,7 +167,7 @@ const Home = ({
             <div className="card-body">
               <h3 className="card-title ntpCardTitle2">LETS GET YOU SORTED!</h3>
               <Link
-                to={getInTouchUrl}
+                to="/contactUs"
                 className="btn btn-primary btnThemeClr getInTouchBtnMobile"
               >
                 GET IN TOUCH

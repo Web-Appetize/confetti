@@ -11,6 +11,9 @@ import {
   SET_CONNECT_INFO,
   SET_ABOUT_INFO,
   SET_TABS,
+  SET_MSGSENT_INFO,
+  SET_SORTED_INFO,
+  SET_LOCK_INFO,
 } from '../Types';
 
 const CCaction = (props) => {
@@ -21,8 +24,11 @@ const CCaction = (props) => {
     noTimeInfo: {},
     connectInfo: {},
     aboutInfo: {},
+    sortedInfo: {},
+    lockInfo: {},
+    msgSentInfo: {},
     loading: false,
-    tabs: ['ContactUs', 'AboutUs'],
+    tabs: ['ContactUs', 'AboutUs', 'ProjectList'],
   };
   const hostName = 'https://confettiportfolio.herokuapp.com';
   const [state, dispatch] = useReducer(GFreducer, initialState);
@@ -43,6 +49,24 @@ const CCaction = (props) => {
 
     let connectRes = await axios.get(`${hostName}/connect`);
     dispatch({ type: SET_CONNECT_INFO, payload: connectRes.data });
+  }
+
+  async function fetchSortedInfo() {
+    setloading();
+    let sortedRes = await axios.get(`${hostName}/sorted`);
+    dispatch({ type: SET_SORTED_INFO, payload: sortedRes.data });
+  }
+
+  async function fetchMsgSentInfo() {
+    setloading();
+    let msgSentRes = await axios.get(`${hostName}/message-sent`);
+    dispatch({ type: SET_MSGSENT_INFO, payload: msgSentRes.data });
+  }
+
+  async function fetchLockInfo() {
+    setloading();
+    let lockRes = await axios.get(`${hostName}/confidentiality`);
+    dispatch({ type: SET_LOCK_INFO, payload: lockRes.data });
   }
 
   async function fetchServiceInfo() {
@@ -91,6 +115,9 @@ const CCaction = (props) => {
         aboutInfo: state.aboutInfo,
         loading: state.loading,
         tabs: state.tabs,
+        sortedInfo: state.sortedInfo,
+        lockInfo: state.lockInfo,
+        msgSentInfo: state.msgSentInfo,
         fetchHomeInfo,
         fetchServiceInfo,
         fetchProjectInfo,
@@ -98,6 +125,9 @@ const CCaction = (props) => {
         fetchConnectInfo,
         fetchAboutInfo,
         setTabs,
+        fetchSortedInfo,
+        fetchMsgSentInfo,
+        fetchLockInfo,
       }}
     >
       {props.children}
