@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { isMobile } from 'react-device-detect';
 import defaultURL from '../../imgs/sampleWall.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const ContainerCards = ({
   projectType,
@@ -10,7 +10,13 @@ const ContainerCards = ({
   imageURL,
   url = '/ProjectList',
   showProject,
+  locked,
 }) => {
+  const navigate = useNavigate();
+  const redirectPage = (tabName) => {
+    navigate(tabName);
+  };
+
   return (
     <div
       className={`row ${isMobile ? 'pl-1 pr-1 pt-1' : 'pl-5 pr-5 pt-5'} pb-0`}
@@ -24,15 +30,14 @@ const ContainerCards = ({
           height="600"
           className="shadow-sm"
         />
-        {isMobile ? (
-          <div className="projectBtn" onClick={showProject}>
-            {btnTxt}
-          </div>
-        ) : (
-          <Link to={url}>
-            <div className="projectBtn">{btnTxt}</div>
-          </Link>
-        )}
+        <div
+          className="projectBtn"
+          onClick={() =>
+            !locked ? showProject() : redirectPage('/projectList')
+          }
+        >
+          {btnTxt}
+        </div>
       </div>
     </div>
   );

@@ -49,6 +49,12 @@ const CCaction = (props) => {
 
     let connectRes = await axios.get(`${hostName}/connect`);
     dispatch({ type: SET_CONNECT_INFO, payload: connectRes.data });
+
+    let sortedRes = await axios.get(`${hostName}/sorted`);
+    dispatch({ type: SET_SORTED_INFO, payload: sortedRes.data });
+
+    let lockRes = await axios.get(`${hostName}/confidentiality`);
+    dispatch({ type: SET_LOCK_INFO, payload: lockRes.data });
   }
 
   async function fetchSortedInfo() {

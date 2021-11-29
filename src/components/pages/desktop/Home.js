@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../../layout/Footer';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ContainerCards from '../../layout/ContainerCards';
 
 const ww = window.innerWidth - 15;
@@ -15,7 +15,14 @@ const Home = ({
   setCurrentDesc,
   noTimeInfo,
   connectInfo,
+  sortedInfo,
+  lockInfo,
 }) => {
+  const navigate = useNavigate();
+  const redirectPage = (tabName) => {
+    navigate(tabName);
+  };
+
   const {
     title: currentServiceTitle,
     imageURL,
@@ -23,8 +30,54 @@ const Home = ({
     getInTouchUrl = '',
   } = currentDesc || services[0];
 
+  const [modal, setmodal] = useState(false);
+
+  const setmodalFn = (val) => {
+    document.getElementById('homeProjectModalBtn').click();
+    setmodal(val);
+  };
+
   return (
     <div className="container-fluid homeContainer" style={{ width: ww }}>
+      <div
+        class="modal fade"
+        id="homeProjectModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="homeProjectModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button
+                type="button"
+                class="close"
+                onClick={() => setmodalFn(!modal)}
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+
+              <div>
+                <h3 className="font-weight-bold">{lockInfo.title}</h3>
+                {lockInfo.text.map(({ text: locktext }) => (
+                  <h6>{locktext}</h6>
+                ))}
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-default mr-auto btnThemeClr text-white font-weight-bold"
+                data-dismiss="modal"
+                onClick={() => redirectPage('/ProjectList')}
+              >
+                GET IN TOUCH
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="row">
         <div
           id="carouselExampleSlidesOnly"
@@ -109,12 +162,12 @@ const Home = ({
                 </h6>
               ))}
 
-              <Link
-                to="/contactUs"
+              <span
+                onClick={() => redirectPage('/ProjectList')}
                 className="btn btn-primary btnThemeClr getInTouchBtn"
               >
                 GET IN TOUCH
-              </Link>
+              </span>
             </div>
           </div>
         </div>
@@ -125,6 +178,7 @@ const Home = ({
           <ContainerCards
             key={idx}
             {...project}
+            showProject={() => setmodalFn(!modal)}
             isLast={idx === containerCards.length - 1}
           />
         );
@@ -143,22 +197,29 @@ const Home = ({
           </div>
         </div>
         <div className="col shadow-sm">
-          <div
-            className="card notTimePadding cardBackImg"
-          >
+          <div className="card notTimePadding cardBackImg">
             <div className="card-body">
-              <h3 className="card-title ntpCardTitle2">LETS GET YOU SORTED!</h3>
-              <Link
+              <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>
+              <span
                 key={getInTouchUrl}
-                to="/contactUs"
+                onClick={() => redirectPage('/ProjectList')}
                 className="btn btn-primary btnThemeClr NavGetInTouchUrl ml-0"
               >
                 GET IN TOUCH
-              </Link>
+              </span>
             </div>
           </div>
         </div>
       </div>
+      <button
+        type="button"
+        class="btn btn-primary invisible"
+        data-toggle="modal"
+        data-target="#homeProjectModal"
+        id="homeProjectModalBtn"
+      >
+        Launch demo modal
+      </button>
       <Footer {...connectInfo} />
     </div>
   );

@@ -6,10 +6,19 @@ import {
   SET_NOTIME_INFO,
   SET_CONNECT_INFO,
   SET_ABOUT_INFO,
-  SET_TABS
+  SET_TABS,
+  SET_SORTED_INFO,
+  SET_MSGSENT_INFO,
+  SET_LOCK_INFO,
 } from '../Types';
 export default (state, action) => {
   switch (action.type) {
+    case SET_SORTED_INFO:
+      return { ...state, sortedInfo: action.payload, loading: false };
+    case SET_MSGSENT_INFO:
+      return { ...state, msgSentInfo: action.payload, loading: false };
+    case SET_LOCK_INFO:
+      return { ...state, lockInfo: action.payload, loading: false };
     case SET_HOME_INFO:
       return { ...state, homeInfo: action.payload, loading: false };
     case SET_SERVICE_INFO:

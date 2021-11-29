@@ -14,11 +14,13 @@ const Home = ({
   setCurrentDesc,
   noTimeInfo,
   connectInfo,
+  sortedInfo,
+  lockInfo,
 }) => {
   const [slider, setSlider] = useState(false);
   const {
     title: currentServiceTitle,
-    imageURL,
+    imageURL = '',
     description: currentServiceDescription = [],
     getInTouchUrl = '',
   } = currentDesc || services[0];
@@ -49,12 +51,14 @@ const Home = ({
             <div className="title">
               {currentServiceTitle}
               <span>
-                <img
-                  alt={currentServiceTitle}
-                  className="img-responsive align-baseline ml-2"
-                  src={imageURL}
-                  height="30"
-                />
+                {imageURL && (
+                  <img
+                    alt={currentServiceTitle}
+                    className="img-responsive align-baseline ml-2"
+                    src={imageURL}
+                    height="30"
+                  />
+                )}
               </span>
             </div>
             {currentServiceDescription.map(({ text, id }) => (
@@ -143,7 +147,12 @@ const Home = ({
             <ContainerCards
               key={idx}
               {...project}
-              showProject={() => setSlider(!slider)}
+              showProject={() =>
+                setCurrentDescFn({
+                  title: lockInfo.title,
+                  description: lockInfo.text,
+                })
+              }
               isLast={idx === containerCards.length - 1}
             />
           </>
@@ -165,7 +174,7 @@ const Home = ({
         <div className="col shadow-sm">
           <div className="card notTimePaddingMobile cardBackImgMobile">
             <div className="card-body">
-              <h3 className="card-title ntpCardTitle2">LETS GET YOU SORTED!</h3>
+              <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>
               <Link
                 to="/contactUs"
                 className="btn btn-primary btnThemeClr getInTouchBtnMobile"

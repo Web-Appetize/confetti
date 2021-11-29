@@ -16,9 +16,11 @@ const HomeContainer = () => {
     homeInfo,
     serviceInfo,
     projectInfo,
+    sortedInfo,
     noTimeInfo,
     connectInfo,
     fetchHomeInfo,
+    lockInfo,
   } = githubContext;
 
   useEffect(() => {
@@ -32,6 +34,8 @@ const HomeContainer = () => {
     !serviceInfo.length ||
     !projectInfo.length ||
     !Object.keys(noTimeInfo).length ||
+    !Object.keys(sortedInfo).length ||
+    !Object.keys(lockInfo).length ||
     !Object.keys(connectInfo).length;
 
   if (loading || noRender) {
@@ -48,6 +52,8 @@ const HomeContainer = () => {
     connectInfo,
     currentDesc,
     setCurrentDesc,
+    sortedInfo,
+    lockInfo,
   };
 
   if (isMobile) return <MobileHome {...data} />;
