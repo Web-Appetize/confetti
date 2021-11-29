@@ -164,7 +164,7 @@ const Home = ({
           </div>
         </div>
         <div className="col shadow-sm">
-          <div className="card notTimePaddingMobile">
+          <div className="card notTimePaddingMobile cardBackImgMobile">
             <div className="card-body">
               <h3 className="card-title ntpCardTitle2">LETS GET YOU SORTED!</h3>
               <Link

@@ -1,37 +1,56 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import loading_url from '../../imgs/Confetti_logo.png';
+import ConfettiContext from '../../context/confetti_context/context';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const { tabs } = useContext(ConfettiContext);
+
   const [open, setNav] = useState(false);
-  const tabs = ['ContactUs', 'AboutUs'];
   let tabExist = false;
+  let videoExist = document.getElementsByClassName('videoContent').length;
   tabs.forEach((tab) => {
     if (!tabExist) {
       tabExist = window.location.href.indexOf(tab) !== -1;
     }
   });
 
+  const redirectPage = (tabName) => {
+    navigate(tabName);
+  };
+
+  const closeOverlayandnavigate = (tabName) => {
+    setNav(!open);
+    navigate(tabName);
+  };
+
   return (
     <React.Fragment>
       <div id="myNav" className={`overlay ${open ? 'w-100' : ''}`}>
         <div className="overlay-content">
-          <Link to="">
+          <span
+            onClick={() => closeOverlayandnavigate('/')}
+            className="text-white"
+          >
             <span>Home </span>
-          </Link>
-          <Link to="">
+          </span>
+          <span
+            onClick={() => closeOverlayandnavigate('/aboutUs')}
+            className="text-white"
+          >
             <span> About Us</span>
-          </Link>
-          <Link
+          </span>
+          <span
             key="NavGetInTouchUrl"
-            to="/ContactUs"
-            className={`btn btn-primary btnThemeClr NavGetInTouchUrl ${
+            onClick={() => closeOverlayandnavigate('/contactUs')}
+            className={`btn btn-primary btnThemeClr NavGetInTouchUrl text-white ${
               open ? '' : 'd-none'
             }`}
           >
             GET IN TOUCH
-          </Link>
+          </span>
         </div>
       </div>
       <nav
@@ -39,7 +58,10 @@ const Navbar = () => {
           tabExist ? 'shadow-sm' : ''
         }`}
       >
-        <Link className="navbar-brand text-info" to="">
+        <span
+          className="navbar-brand text-info"
+          onClick={() => redirectPage('/')}
+        >
           <img
             src={loading_url}
             alt="Confetti"
@@ -47,7 +69,7 @@ const Navbar = () => {
             width="50px"
             height="40px"
           />
-        </Link>
+        </span>
         <button
           className="navbar-toggler customToggler"
           type="button"
@@ -57,12 +79,14 @@ const Navbar = () => {
         >
           {open ? (
             <i
-              className="fas fa-times text-white"
+              className={`fas fa-times text-white`}
               onClick={() => setNav(!open)}
             ></i>
           ) : (
             <i
-              className="fas fa-bars text-white"
+              className={`fas fa-bars ${
+                tabExist || videoExist ? 'text-white' : ''
+              }`}
               onClick={() => setNav(!open)}
             ></i>
           )}
@@ -71,34 +95,40 @@ const Navbar = () => {
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item ">
-              <Link className="nav-link" to="">
+              <span className="nav-link" onClick={() => redirectPage('/')}>
                 <button
                   type="button"
                   className={`${tabExist ? '' : 'text-white'} btn btn-default`}
                 >
                   Home
                 </button>
-              </Link>
+              </span>
             </li>
             <li className="nav-item ">
-              <Link className="nav-link" to="AboutUs">
+              <span
+                className="nav-link"
+                onClick={() => redirectPage('/AboutUs')}
+              >
                 <button
                   type="button"
                   className={`${tabExist ? '' : 'text-white'} btn btn-default`}
                 >
                   About us
                 </button>
-              </Link>
+              </span>
             </li>
             <li className="nav-item ">
-              <Link className="nav-link" to="ContactUs">
+              <span
+                className="nav-link"
+                onClick={() => redirectPage('/ContactUs')}
+              >
                 <button
                   type="button"
                   className="btn btnThemeClr text-white font-weight-bold pl-4 pr-4"
                 >
                   GET IN TOUCH
                 </button>
-              </Link>
+              </span>
             </li>
           </ul>
         </div>

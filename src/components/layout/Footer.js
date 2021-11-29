@@ -19,8 +19,7 @@ const Footer = ({
           } bg-dark text-white`}
         >
           <div
-            className="card  bg-dark"
-            // style={{ backgroundImage: `url(${footerWallImg})` }}
+            className="card bg-dark footerImg"
           >
             <div className="card-body">
               <div className="footerTitle1">CONNECT WITH US!</div>

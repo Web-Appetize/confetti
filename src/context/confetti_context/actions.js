@@ -10,6 +10,7 @@ import {
   SET_NOTIME_INFO,
   SET_CONNECT_INFO,
   SET_ABOUT_INFO,
+  SET_TABS,
 } from '../Types';
 
 const CCaction = (props) => {
@@ -21,6 +22,7 @@ const CCaction = (props) => {
     connectInfo: {},
     aboutInfo: {},
     loading: false,
+    tabs: ['ContactUs', 'AboutUs'],
   };
   const hostName = 'https://confettiportfolio.herokuapp.com';
   const [state, dispatch] = useReducer(GFreducer, initialState);
@@ -76,6 +78,8 @@ const CCaction = (props) => {
   const setloading = (status) =>
     dispatch({ type: SET_LOADING, payload: status });
 
+  const setTabs = (val) => dispatch({ type: SET_TABS, payload: val });
+
   return (
     <GFcontext.Provider
       value={{
@@ -86,12 +90,14 @@ const CCaction = (props) => {
         connectInfo: state.connectInfo,
         aboutInfo: state.aboutInfo,
         loading: state.loading,
+        tabs: state.tabs,
         fetchHomeInfo,
         fetchServiceInfo,
         fetchProjectInfo,
         fetchNoTimeInfo,
         fetchConnectInfo,
         fetchAboutInfo,
+        setTabs,
       }}
     >
       {props.children}

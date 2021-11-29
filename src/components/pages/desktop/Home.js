@@ -3,6 +3,7 @@ import React from 'react';
 import Footer from '../../layout/Footer';
 import { Link } from 'react-router-dom';
 import ContainerCards from '../../layout/ContainerCards';
+
 const ww = window.innerWidth - 15;
 
 const Home = ({
@@ -142,7 +143,9 @@ const Home = ({
           </div>
         </div>
         <div className="col shadow-sm">
-          <div className="card notTimePadding">
+          <div
+            className="card notTimePadding cardBackImg"
+          >
             <div className="card-body">
               <h3 className="card-title ntpCardTitle2">LETS GET YOU SORTED!</h3>
               <Link

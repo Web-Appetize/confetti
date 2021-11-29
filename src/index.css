@@ -593,3 +593,21 @@ body {
     opacity: 1;
   }
 }
+
+.cardBackImg {
+  background-image: url('./imgs/star.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cardBackImgMobile{
+  background-image: url('./imgs/star.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.footerImg {
+  background-image: url('./imgs/footerWall.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+}
