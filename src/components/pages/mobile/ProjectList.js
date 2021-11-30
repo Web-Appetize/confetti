@@ -5,11 +5,15 @@ import ProjectCards from '../../layout/ProjectCards';
 import noImg from '../../../imgs/noImage.png';
 import intro from '../../../imgs/intro.jpg';
 import { sortBy } from 'lodash';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { isMobile } from 'react-device-detect';
 const ww = window.innerWidth - 15;
 
 const AboutUs = ({ projectInfo, connectInfo }) => {
+  const navigate = useNavigate();
+  const redirectPage = (tabName) => {
+    navigate(tabName);
+  };
   return (
     <div className="container-fluid" style={{ width: ww }}>
       {projectInfo.map((project) => {
@@ -20,6 +24,15 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
 
         return (
           <>
+            <div className="projectTitleTextMobile shadow-lg text-white text-center">
+              NOW LETS WORK ON YOUR PROJECT{' '}
+              <span
+                onClick={() => redirectPage('/contactUs')}
+                className="btn btn-primary btnThemeClr mt-2 w-100 fs-40"
+              >
+                <strong>GET IN TOUCH</strong>
+              </span>
+            </div>
             <div className="row">
               <div className="p-5">
                 <div className="w-100 h4 themeClr">Client</div>
@@ -31,7 +44,7 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
               </div>
               <div
                 id="carouselExampleSlidesOnly"
-                class="carousel slide mt-3 shadow"
+                class="carousel slide mt-3 shadow-sm"
                 data-ride="carousel"
               >
                 <div class="carousel-inner">
@@ -76,6 +89,16 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
                   </div>
                 )
               )}
+              <div className="p-3 text-center">
+                <h1 className="fs-55">IMPRESSED BY OUR WORK?</h1>
+                <button
+                  type="button"
+                  class="btn btn-light impressend shadow-sm"
+                  onClick={() => redirectPage('/contactUs')}
+                >
+                  VIEW OTHER PROJECTS
+                </button>
+              </div>
             </div>
           </>
         );

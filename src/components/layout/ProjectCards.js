@@ -14,7 +14,7 @@ const ContainerCards = ({
 }) => {
   return (
     <div className={`mx-auto ${isMobile ? 'pl-1 pr-1 pt-1 w-100' : 'pl-5 pr-5 pt-5 w-75'}`}>
-      <div class="card shadow">
+      <div class="card shadow-sm">
         <div class="card-header h1 font-weight-bold">
           <div className="h6">{subtitle}</div>
           <div className="h2">{title}</div>

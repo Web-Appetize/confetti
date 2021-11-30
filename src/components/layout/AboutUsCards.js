@@ -15,7 +15,7 @@ const ContainerCards = ({
 }) => {
   return (
     <div className={`row ${isMobile ? 'pl-1 pr-1 pt-1' : 'pl-5 pr-5 pt-5'}`}>
-      <div class="card w-100 shadow">
+      <div class="card w-100 shadow-sm">
         <div class="card-header h1 font-weight-bold">{title}</div>
         <img
           src={imageURL || defaultURL}

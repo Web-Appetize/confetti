@@ -641,6 +641,10 @@ body {
   font-size: 55px;
 }
 
+.fs-40 {
+  font-size: 40px;
+}
+
 .w-18 {
   width: 18%;
 }
@@ -669,4 +673,57 @@ body {
 
 .fsstar {
   color: #f3d436;
+}
+
+.rightTopCaption {
+  top: 5% !important;
+  right: 5% !important;
+  left: unset;
+}
+
+.projectTitleText {
+  background: black;
+  width: 350px;
+  font-size: 19px;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.projectTitleTextMobile {
+  background: black;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 22px;
+  padding: 25px;
+  border-radius: 5px;
+  z-index: 100;
+  text-align: left;
+  font-weight: bold;
+}
+
+.impressend {
+  font-size: 31px;
+  border: 1px solid;
+  padding: 10px 25px;
+}
+
+.impressend:hover {
+  background: #a763f6;
+  color: white;
+}
+
+.w68 {
+  width: 68% !important;
+}
+
+.card .card-header {
+  background-color: white !important;
+}
+
+.card {
+  border: none;
 }
