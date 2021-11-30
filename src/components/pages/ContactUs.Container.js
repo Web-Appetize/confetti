@@ -10,16 +10,29 @@ import Loader from './Loader';
 
 const ContactUsContainer = () => {
   const githubContext = useContext(ConfettiContext);
-  const { loading, connectInfo, fetchConnectInfo } = githubContext;
+  const {
+    loading,
+    connectInfo,
+    fetchConnectInfo,
+    fetchMsgSentInfo,
+    msgSentInfo,
+  } = githubContext;
   useEffect(() => {
     fetchConnectInfo();
+    fetchMsgSentInfo();
     //eslint-disable-next-line
   }, []);
   const data = {
     connectInfo,
+    msgSentInfo,
   };
 
-  if (loading || !Object.keys(connectInfo).length) return <Loader />;
+  if (
+    loading ||
+    !Object.keys(connectInfo).length ||
+    !Object.keys(msgSentInfo).length
+  )
+    return <Loader />;
   if (isMobile) return <MobileContactUs {...data} />;
   return <ContactUs {...data} />;
 };

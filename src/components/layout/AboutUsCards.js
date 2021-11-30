@@ -14,9 +14,7 @@ const ContainerCards = ({
   showProject,
 }) => {
   return (
-    <div
-      className={`row ${isMobile ? 'pl-1 pr-1 pt-1' : 'pl-5 pr-5 pt-5'}`}
-    >
+    <div className={`row ${isMobile ? 'pl-1 pr-1 pt-1' : 'pl-5 pr-5 pt-5'}`}>
       <div class="card w-100 shadow">
         <div class="card-header h1 font-weight-bold">{title}</div>
         <img
@@ -26,18 +24,11 @@ const ContainerCards = ({
           height="600"
           className="card-img-top"
         />
-        <div class="card-body">
-          {isMobile ? (
-            <div className="projectBtn card-link" onClick={showProject}>
-              Click to Explore
-            </div>
-          ) : (
-            <Link to={url}>
-              <div className="projectBtn w-18 border card-link">Click to Explore</div>
-            </Link>
-          )}
-          {subtitle && <h5 class="card-title">{subtitle}</h5>}
-        </div>
+        {subtitle && (
+          <div class="card-body">
+            {subtitle && <h5 class="card-title">{subtitle}</h5>}
+          </div>
+        )}
         <ul class="list-group list-group-flush border">
           {text.map(({ text: label }) => (
             <li class="list-group-item">{label}</li>

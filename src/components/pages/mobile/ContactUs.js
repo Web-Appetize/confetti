@@ -1,11 +1,18 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../../layout/Footer';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ContainerCards from '../../layout/ContainerCards';
 const ww = window.innerWidth - 15;
 
-const ContactUs = ({ connectInfo }) => {
+const ContactUs = ({ connectInfo, msgSentInfo }) => {
+  const navigate = useNavigate();
+  const redirectPage = (tabName) => {
+    setSlider(!slider);
+    navigate(tabName);
+  };
+  const [slider, setSlider] = useState(false);
   const { instagram, mail, linkedin, behance, dribble } = connectInfo;
   return (
     <div className="container-fluid" style={{ width: ww }}>
@@ -136,7 +143,7 @@ const ContactUs = ({ connectInfo }) => {
                   // type="submit"
                   className="btn btn-default btn-secondary"
                   data-toggle="modal"
-                  data-target="#sendMessage"
+                  onClick={() => setSlider(!slider)}
                 >
                   SEND MESSAGE
                 </button>
@@ -144,37 +151,29 @@ const ContactUs = ({ connectInfo }) => {
             </div>
           </div>
         </div>
-        <div
-          className="modal fade contactUsDesktopModal"
-          id="sendMessage"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div className="modal-dialog" role="document">
-            <div className="modal-content">
-              <div className="modal-body">
-                <h4>
-                  {' '}
-                  <strong>MESSAGE SENT SUCCESFULLY !</strong>{' '}
-                </h4>
-                <h6>
-                  THANKS FOR GETTING IN TOUCH! WE WILL GET BACK TO YOU WITHIN 24
-                  HOURS!
-                </h6>
-                <h6>WHY DON’T YOU VIEW SOME OF OUR WORK TILL THEN?</h6>
-              </div>
-              <div className="modal-footer">
-                <Link
-                  to=""
-                  type="button"
-                  className="btn btn-default btnThemeClr text-white"
-                  data-dismiss="modal"
-                >
-                  BACK TO HOME
-                </Link>
-              </div>
+        <div className={`slider ${slider ? '' : 'close'}`}>
+          <div className="transparent"></div>
+          <div className="content">
+            <div className="titleBar">
+              <i
+                className="fas fa-times"
+                onClick={() => setSlider(!slider)}
+              ></i>
+            </div>
+            <div className="dataContainer">
+              <div className="title">{msgSentInfo.title}</div>
+              {msgSentInfo.text.map(({ text, id }) => (
+                <div key={id} className="h4 mb-3">
+                  {text}
+                </div>
+              ))}
+
+              <span
+                onClick={() => redirectPage('/ProjectList')}
+                className="btn btn-primary btnThemeClr getInTouchBtnMobile w-100 p-3 mt-2 mb-2"
+              >
+                View Projects
+              </span>
             </div>
           </div>
         </div>

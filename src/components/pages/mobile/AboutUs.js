@@ -8,7 +8,7 @@ import { sortBy } from 'lodash';
 import { Link } from 'react-router-dom';
 const ww = window.innerWidth - 15;
 
-const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo }) => {
+const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo, sortedInfo }) => {
   const {
     title,
     subtitle,
@@ -43,9 +43,9 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo }) => {
         </span>
       </div>
       <div className="row text-left h5 p-2">
-          <h1 className="text-bold mt-3">
-            <strong className="thatsUstext">{subtitle}</strong>{' '}
-          </h1>
+        <h1 className="text-bold mt-3">
+          <strong className="thatsUstext">{subtitle}</strong>{' '}
+        </h1>
         <div className="col-7 aboutUsStarCard-3"></div>
       </div>
       {projectCards.map((project, idx) => {
@@ -73,7 +73,7 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo }) => {
         <div className="col shadow-sm">
           <div className="card notTimePadding cardBackImg">
             <div className="card-body">
-              <h3 className="card-title ntpCardTitle2">LETS GET YOU SORTED!</h3>
+              <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>
               <Link
                 to="/contactUs"
                 className="btn btn-primary btnThemeClr NavGetInTouchUrl ml-0"

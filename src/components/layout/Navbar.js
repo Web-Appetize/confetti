@@ -37,7 +37,7 @@ const Navbar = () => {
             <span>Home </span>
           </span>
           <span
-            onClick={() => closeOverlayandnavigate('/aboutUs')}
+            onClick={() => closeOverlayandnavigate('/AboutUs')}
             className="text-white"
           >
             <span> About Us</span>

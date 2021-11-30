@@ -70,7 +70,7 @@ const Home = ({
                 type="button"
                 class="btn btn-default mr-auto btnThemeClr text-white font-weight-bold"
                 data-dismiss="modal"
-                onClick={() => redirectPage('/ProjectList')}
+                onClick={() => redirectPage('/ContactUs')}
               >
                 GET IN TOUCH
               </button>
@@ -163,7 +163,7 @@ const Home = ({
               ))}
 
               <span
-                onClick={() => redirectPage('/ProjectList')}
+                onClick={() => redirectPage('/ContactUs')}
                 className="btn btn-primary btnThemeClr getInTouchBtn"
               >
                 GET IN TOUCH
@@ -202,7 +202,7 @@ const Home = ({
               <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>
               <span
                 key={getInTouchUrl}
-                onClick={() => redirectPage('/ProjectList')}
+                onClick={() => redirectPage('/ContactUs')}
                 className="btn btn-primary btnThemeClr NavGetInTouchUrl ml-0"
               >
                 GET IN TOUCH

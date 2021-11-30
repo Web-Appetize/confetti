@@ -18,22 +18,27 @@ const AboutUsContainer = () => {
     fetchNoTimeInfo,
     noTimeInfo,
     connectInfo,
+    sortedInfo,
+fetchSortedInfo
   } = githubContext;
   useEffect(() => {
     fetchAboutInfo();
     fetchConnectInfo();
     fetchNoTimeInfo();
+    fetchSortedInfo();
     //eslint-disable-next-line
   }, []);
   const data = {
     aboutInfo,
     connectInfo,
-    noTimeInfo
+    noTimeInfo,
+    sortedInfo
   };
 
   if (
     loading ||
     !Object.keys(aboutInfo).length ||
+    !Object.keys(sortedInfo).length ||
     !Object.keys(connectInfo).length ||
     !Object.keys(noTimeInfo).length
   )

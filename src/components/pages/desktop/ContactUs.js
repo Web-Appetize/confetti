@@ -3,11 +3,16 @@ import React from 'react';
 import Footer from '../../layout/Footer';
 import { Link } from 'react-router-dom';
 import ContainerCards from '../../layout/ContainerCards';
+import { useNavigate } from 'react-router-dom';
 const ww = window.innerWidth - 15;
 
-const ContactUs = ({ connectInfo }) => {
+const ContactUs = ({ connectInfo, msgSentInfo }) => {
+  const navigate = useNavigate();
+  const redirectPage = (tabName) => {
+    navigate(tabName);
+  };
+
   const { instagram, mail, linkedin, behance, dribble } = connectInfo;
-  console.log(connectInfo, 'connectInfo');
   return (
     <div className="container-fluid" style={{ width: ww }}>
       <div className="row p-5">
@@ -160,23 +165,21 @@ const ContactUs = ({ connectInfo }) => {
             <div className="modal-body">
               <h3>
                 {' '}
-                <strong>MESSAGE SENT SUCCESFULLY !</strong>{' '}
+                <strong>{msgSentInfo.title}</strong>{' '}
               </h3>
-              <h6>
-                THANKS FOR GETTING IN TOUCH! WE WILL GET BACK TO YOU WITHIN 24
-                HOURS!
-              </h6>
-              <h6>WHY DON’T YOU VIEW SOME OF OUR WORK TILL THEN?</h6>
+              {msgSentInfo.text.map(({ text }) => (
+                <h6>{text}</h6>
+              ))}
             </div>
             <div className="modal-footer">
-              <Link
-                to=""
+              <span
+                onClick={() => redirectPage('/')}
                 type="button"
                 className="btn btn-default btnThemeClr text-white"
                 data-dismiss="modal"
               >
                 BACK TO HOME
-              </Link>
+              </span>
             </div>
           </div>
         </div>
