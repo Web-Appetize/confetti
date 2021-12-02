@@ -84,7 +84,6 @@ const Home = ({
           <div className="carousel-inner">
             <div
               className="carousel-item active text-center videoContent verticalCenter"
-              style={{ width: ww }}
               id="videoContentIdMobile"
             >
               <video loop={true} autoPlay="autoplay" muted>

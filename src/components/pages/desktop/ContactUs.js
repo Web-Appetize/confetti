@@ -20,7 +20,11 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
           <div className="card contactUsCard hAuto shadow-sm border-0">
             <div className="card-body">
               <span className="ntpCardTitle1">WE’D LOVE TO HEAR FROM YOU!</span>
-              <div>
+              <form
+                method="post"
+                name="confetti"
+                onSubmit={(e) => e.preventDefault()}
+              >
                 <div className="form-group">
                   <label for="name">Name :</label>
                   <input
@@ -79,7 +83,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                 >
                   SEND MESSAGE
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         </div>

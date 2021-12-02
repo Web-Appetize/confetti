@@ -88,7 +88,6 @@ const Home = ({
             <div
               className="carousel-item active text-center videoContent"
               id="videoContentId"
-              style={{ width: ww }}
             >
               <video loop={true} autoPlay="autoplay" muted>
                 <source src={videoUrl} type="video/mp4" />
