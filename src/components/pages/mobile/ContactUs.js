@@ -16,8 +16,8 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
   const { instagram, mail, linkedin, behance, dribble } = connectInfo;
   return (
     <div className="container-fluid" style={{ width: ww }}>
-      <div className="row p-1">
-        <div className="col-12 mt-3">
+      <div className="row">
+        <div className="col-12  p-0 mt-3">
           <div className="card contactUsCard contactUsCardNoBorder border-0 shadow-sm">
             <div className="card-body">
               <h3 className="card-title ntpCardTitle2 text-normal">
@@ -50,7 +50,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                   </div>
                 </div>
               </div>
-              <div className="text-right">
+              <div className="text-center">
                 <span onClick={() => window.open(mail)}>
                   <span className="footerIcon">
                     <i className="far fa-envelope"></i>
@@ -84,7 +84,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
             </div>
           </div>
         </div>
-        <div className="col-12 mt-3">
+        <div className="col-12 mt-3 mb-3 p-0">
           <div className="card contactUsCard hAuto shadow-sm border-0">
             <div className="card-body">
               <span className="ntpCardTitle1">WE’D LOVE TO HEAR FROM YOU!</span>
