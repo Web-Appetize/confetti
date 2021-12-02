@@ -94,10 +94,11 @@ body {
 }
 
 .videoContent .carousel-caption {
-  width: 40%;
+  width: 42%;
   text-align: start;
-  font-size: 60px;
+  font-size: 68px;
   font-weight: bold;
+  line-height: 80px;
   bottom: 20%;
 }
 
@@ -142,6 +143,7 @@ body {
   position: absolute;
   left: 5%;
   bottom: 60px;
+  border: 1px solid;
 }
 
 .projectTitle {

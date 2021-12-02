@@ -32,20 +32,20 @@ const Navbar = () => {
         <div className="overlay-content">
           <span
             onClick={() => closeOverlayandnavigate('/')}
-            className="text-white"
+            className="text-white font-weight-bold"
           >
-            <span>Home </span>
+            <span>HOME </span>
           </span>
           <span
             onClick={() => closeOverlayandnavigate('/AboutUs')}
-            className="text-white"
+            className="text-white font-weight-bold"
           >
-            <span> About Us</span>
+            <span> ABOUT US</span>
           </span>
           <span
             key="NavGetInTouchUrl"
             onClick={() => closeOverlayandnavigate('/ContactUs')}
-            className={`btn btn-primary btnThemeClr NavGetInTouchUrl text-white ${
+            className={`btn btn-primary btnThemeClr NavGetInTouchUrl text-white font-weight-bold ${
               open ? '' : 'd-none'
             }`}
           >
@@ -65,8 +65,8 @@ const Navbar = () => {
           <img
             src={loading_url}
             alt="Confetti"
-            style={{ marginLeft: '10%' }}
-            width={isMobile ? '40px' : '50px'}
+            style={{ marginLeft: isMobile ? '10%' : '100%' }}
+            width={isMobile ? '40px' : '45px'}
             height="40px"
           />
         </span>
@@ -98,9 +98,9 @@ const Navbar = () => {
                   type="button"
                   className={`${
                     isBlackBar ? '' : 'text-white'
-                  } btn btn-default`}
+                  } btn btn-default font-weight-bold`}
                 >
-                  Home
+                  HOME
                 </button>
               </span>
             </li>
@@ -113,9 +113,9 @@ const Navbar = () => {
                   type="button"
                   className={`${
                     isBlackBar ? '' : 'text-white'
-                  } btn btn-default`}
+                  } btn btn-default font-weight-bold`}
                 >
-                  About us
+                  ABOUT US
                 </button>
               </span>
             </li>

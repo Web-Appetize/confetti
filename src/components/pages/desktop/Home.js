@@ -114,13 +114,13 @@ const Home = ({
         </div>
       </div>
 
-      <div className="row pl-5 pr-5 pt-5 pb-0">
+      <div className="row pl-5 pr-5 pt-5 pb-0 mt-3">
         <div className="col">
           <span className="homeTitle">HOW CAN WE HELP YOU?</span>
         </div>
         <div className="w-100"></div>
         <div className="col">
-          <div className="card services shadow-sm">
+          <div className="card services shadow-sm border rounded">
             <ul className="list-group list-group-flush">
               {services.map(({ title, url = '/' }, idx) => {
                 return (
@@ -143,7 +143,7 @@ const Home = ({
           </div>
         </div>
         <div className="col">
-          <div className="card services shadow-sm">
+          <div className="card services shadow-sm border rounded">
             <div className="card-body">
               <h3 className="card-title mb-3">
                 {currentServiceTitle}{' '}
@@ -173,17 +173,20 @@ const Home = ({
         </div>
       </div>
       {/* projects showcase */}
-      {containerCards.map((project, idx) => {
-        return (
-          <ContainerCards
-            key={idx}
-            {...project}
-            showProject={() => setmodalFn(!modal)}
-            isLast={idx === containerCards.length - 1}
-          />
-        );
-      })}
-      <div className="row p-5 m-1">
+      <div className="mt-3">
+        {containerCards.map((project, idx) => {
+          return (
+            <ContainerCards
+              key={idx}
+              {...project}
+              showProject={() => setmodalFn(!modal)}
+              isLast={idx === containerCards.length - 1}
+            />
+          );
+        })}
+      </div>
+
+      <div className="row mt-3 p-5 m-1">
         <div className="col bg-dark text-white">
           <div className="card notTimePadding bg-dark">
             <div className="card-body">
@@ -196,7 +199,7 @@ const Home = ({
             </div>
           </div>
         </div>
-        <div className="col shadow-sm">
+        <div className="col shadow-sm border">
           <div className="card notTimePadding cardBackImg">
             <div className="card-body">
               <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>
