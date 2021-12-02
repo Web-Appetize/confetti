@@ -75,7 +75,7 @@ const Home = ({
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className="row verticalCenter">
         <div
           id="carouselExampleSlidesOnly"
           className="carousel slide"
@@ -83,7 +83,7 @@ const Home = ({
         >
           <div className="carousel-inner">
             <div
-              className="carousel-item active text-center videoContent verticalCenter"
+              className="carousel-item active text-center videoContent"
               id="videoContentIdMobile"
             >
               <video loop={true} autoPlay="autoplay" muted>
