@@ -14,7 +14,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
 
   const { instagram, mail, linkedin, behance, dribble } = connectInfo;
   return (
-    <div className="container-fluid" style={{ width: ww }}>
+    <div className="container-fluid">
       <div className="row p-5">
         <div className="col">
           <div className="card contactUsCard hAuto shadow-sm border-0">

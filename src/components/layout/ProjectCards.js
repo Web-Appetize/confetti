@@ -24,8 +24,8 @@ const ContainerCards = ({
             <img
               src={imageURL || defaultURL}
               alt={projectType}
-              height="600"
-              className="card-img-top mb-2"
+              
+              className="card-img-top mb-2 img-responsive"
             />
           ))}
         <ul class="list-group list-group-flush border">

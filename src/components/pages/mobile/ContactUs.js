@@ -15,7 +15,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
   const [slider, setSlider] = useState(false);
   const { instagram, mail, linkedin, behance, dribble } = connectInfo;
   return (
-    <div className="container-fluid" style={{ width: ww }}>
+    <div className="container-fluid">
       <div className="row">
         <div className="col-12  p-0 mt-3">
           <div className="card contactUsCard contactUsCardNoBorder border-0 shadow-sm">

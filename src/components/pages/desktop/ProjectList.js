@@ -14,7 +14,7 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
     navigate(tabName);
   };
   return (
-    <div className="container-fluid" style={{ width: ww }}>
+    <div className="container-fluid">
       {projectInfo.map((project) => {
         const projectCards = sortBy(
           [...project.projectCard, ...project.projectCardWithMedia],

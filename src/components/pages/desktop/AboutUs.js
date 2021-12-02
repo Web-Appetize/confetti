@@ -18,7 +18,7 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo , sortedInfo }) => {
   } = aboutInfo;
   const projectCards = sortBy([...card, ...cardWithMedia], ['sno']);
   return (
-    <div className="container-fluid homeContainer" style={{ width: ww }}>
+    <div className="container-fluid homeContainer">
       <div className="row">
         <div
           id="carouselExampleSlidesOnly"
