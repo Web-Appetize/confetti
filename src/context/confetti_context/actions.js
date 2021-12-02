@@ -28,7 +28,7 @@ const CCaction = (props) => {
     lockInfo: {},
     msgSentInfo: {},
     loading: false,
-    tabs: ['ContactUs', 'AboutUs', 'ProjectList'],
+    tabs: ['ProjectList', 'ContactUs'],
   };
   const hostName = 'https://confettiportfolio.herokuapp.com';
   const [state, dispatch] = useReducer(GFreducer, initialState);

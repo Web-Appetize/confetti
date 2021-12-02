@@ -75,7 +75,7 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo, sortedInfo }) => {
             <div className="card-body">
               <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>
               <Link
-                to="/contactUs"
+                to="/ContactUs"
                 className="btn btn-primary btnThemeClr NavGetInTouchUrl ml-0"
               >
                 GET IN TOUCH

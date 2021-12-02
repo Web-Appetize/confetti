@@ -91,7 +91,7 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
                 <button
                   type="button"
                   class="btn btn-light impressend shadow-sm"
-                  onClick={() => redirectPage('/contactUs')}
+                  onClick={() => redirectPage('/ContactUs')}
                 >
                   VIEW OTHER PROJECTS
                 </button>

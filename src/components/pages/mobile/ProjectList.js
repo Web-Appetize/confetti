@@ -27,7 +27,7 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
             <div className="projectTitleTextMobile shadow-lg text-white text-center">
               NOW LETS WORK ON YOUR PROJECT{' '}
               <span
-                onClick={() => redirectPage('/contactUs')}
+                onClick={() => redirectPage('/ContactUs')}
                 className="btn btn-primary btnThemeClr mt-2 w-100 fs-40"
               >
                 <strong>GET IN TOUCH</strong>
@@ -94,7 +94,7 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
                 <button
                   type="button"
                   class="btn btn-light impressend shadow-sm"
-                  onClick={() => redirectPage('/contactUs')}
+                  onClick={() => redirectPage('/ContactUs')}
                 >
                   VIEW OTHER PROJECTS
                 </button>

@@ -47,6 +47,8 @@ body {
   position: relative;
   font-weight: bold;
   padding: 5px 30px;
+  font-size: 30px;
+  width: 100%;
 }
 
 .services-list {
@@ -105,8 +107,8 @@ body {
   font-size: 50px;
   font-weight: bold;
   margin-left: -25px;
-  bottom: 5%;
   z-index: 0;
+  line-height: 60px;
 }
 
 .notTimePadding {
@@ -172,7 +174,7 @@ body {
 }
 
 .footerMobile {
-  padding: 25px;
+  padding: 5px;
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 15px;
@@ -385,7 +387,7 @@ body {
   margin: 1px auto;
   width: 25px;
   position: relative;
-  top: 30px;
+  top: 150px;
   left: -20px;
 }
 
@@ -726,4 +728,13 @@ body {
 
 .card {
   border: none;
+}
+
+.verticalCenter {
+  display: flex !important;
+  justify-content: center;
+}
+
+.top5px {
+  top: 5px;
 }

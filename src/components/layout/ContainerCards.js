@@ -19,16 +19,16 @@ const ContainerCards = ({
 
   return (
     <div
-      className={`row ${isMobile ? 'pl-1 pr-1 pt-1' : 'pl-5 pr-5 pt-5'} pb-0`}
+      className={`row ${isMobile ? 'pl-0 pr-0 pt-3' : 'pl-5 pr-5 pt-5'} pb-0`}
     >
-      <div className="containerCards col-12">
+      <div className={`containerCards col-12 ${isMobile ? 'p-0' : ''}`}>
         <div className="col-12 projectTitle">{projectType}</div>
         <img
           src={imageURL || defaultURL}
           alt={projectType}
           width={'100%'}
-          height="600"
-          className="shadow-sm"
+          height={isMobile ? '300' : '600'}
+          className="shadow-sm img-responsive"
         />
         <div
           className="projectBtn"

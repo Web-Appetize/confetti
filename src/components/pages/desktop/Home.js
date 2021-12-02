@@ -87,6 +87,7 @@ const Home = ({
           <div className="carousel-inner">
             <div
               className="carousel-item active text-center videoContent"
+              id="videoContentId"
               style={{ width: ww }}
             >
               <video loop={true} autoPlay="autoplay" muted>
@@ -104,7 +105,6 @@ const Home = ({
                   </div>
                   <div>
                     <span class="m_scroll_arrows unu"></span>
-                    <span class="m_scroll_arrows doi"></span>
                     <span class="m_scroll_arrows trei"></span>
                   </div>
                 </div>

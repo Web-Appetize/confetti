@@ -3,17 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import loading_url from '../../imgs/Confetti_logo.png';
 import ConfettiContext from '../../context/confetti_context/context';
+import { isMobile } from 'react-device-detect';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const { tabs } = useContext(ConfettiContext);
 
   const [open, setNav] = useState(false);
-  let tabExist = false;
-  let videoExist = document.getElementsByClassName('videoContent').length;
+  let isBlackBar = false;
   tabs.forEach((tab) => {
-    if (!tabExist) {
-      tabExist = window.location.href.indexOf(tab) !== -1;
+    if (!isBlackBar) {
+      isBlackBar = window.location.href.indexOf(tab) !== -1;
     }
   });
 
@@ -44,7 +44,7 @@ const Navbar = () => {
           </span>
           <span
             key="NavGetInTouchUrl"
-            onClick={() => closeOverlayandnavigate('/contactUs')}
+            onClick={() => closeOverlayandnavigate('/ContactUs')}
             className={`btn btn-primary btnThemeClr NavGetInTouchUrl text-white ${
               open ? '' : 'd-none'
             }`}
@@ -55,8 +55,8 @@ const Navbar = () => {
       </div>
       <nav
         className={`navbar navbar-expand-lg navbar-light ${
-          tabExist ? 'shadow-sm' : ''
-        }`}
+          isBlackBar ? 'shadow-sm' : ''
+        } ${isMobile ? 'top5px' : ''}`}
       >
         <span
           className="navbar-brand text-info"
@@ -66,7 +66,7 @@ const Navbar = () => {
             src={loading_url}
             alt="Confetti"
             style={{ marginLeft: '10%' }}
-            width="50px"
+            width={isMobile ? '40px' : '50px'}
             height="40px"
           />
         </span>
@@ -84,9 +84,7 @@ const Navbar = () => {
             ></i>
           ) : (
             <i
-              className={`fas fa-bars ${
-                tabExist || videoExist ? 'text-white' : ''
-              }`}
+              className={`fas fa-bars ${isBlackBar ? '' : 'text-white'}`}
               onClick={() => setNav(!open)}
             ></i>
           )}
@@ -98,7 +96,9 @@ const Navbar = () => {
               <span className="nav-link" onClick={() => redirectPage('/')}>
                 <button
                   type="button"
-                  className={`${tabExist ? '' : 'text-white'} btn btn-default`}
+                  className={`${
+                    isBlackBar ? '' : 'text-white'
+                  } btn btn-default`}
                 >
                   Home
                 </button>
@@ -111,7 +111,9 @@ const Navbar = () => {
               >
                 <button
                   type="button"
-                  className={`${tabExist ? '' : 'text-white'} btn btn-default`}
+                  className={`${
+                    isBlackBar ? '' : 'text-white'
+                  } btn btn-default`}
                 >
                   About us
                 </button>
