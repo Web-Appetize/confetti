@@ -39,7 +39,6 @@ const Home = ({
       className={`container-fluid homeContainer ${
         slider ? 'disableYScroll' : ''
       }`}
-      style={{ width: ww }}
     >
       <div className={`slider ${slider ? '' : 'close'}`}>
         <div className="transparent"></div>

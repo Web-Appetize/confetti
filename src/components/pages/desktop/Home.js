@@ -38,7 +38,7 @@ const Home = ({
   };
 
   return (
-    <div className="container-fluid homeContainer" style={{ width: ww }}>
+    <div className="container-fluid homeContainer">
       <div
         class="modal fade"
         id="homeProjectModal"

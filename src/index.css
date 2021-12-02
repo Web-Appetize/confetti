@@ -1,8 +1,15 @@
+@font-face {
+  font-family: mySFFont;
+  src: url(SFFont.ttf);
+}
+
 html,
 body {
   overflow-x: hidden;
   font-family: 'Source Sans Pro', sans-serif;
   background: white;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .btnThemeClr {
@@ -94,7 +101,8 @@ body {
 }
 
 .videoContent .carousel-caption {
-  width: 42%;
+  font-family: mySFFont;
+  width: 50%;
   text-align: start;
   font-size: 68px;
   font-weight: bold;
@@ -102,7 +110,12 @@ body {
   bottom: 20%;
 }
 
+nav {
+  font-family: mySFFont;
+}
+
 .videoContent .carousel-caption-mobile {
+  font-family: mySFFont;
   width: 90%;
   text-align: start;
   font-size: 50px;

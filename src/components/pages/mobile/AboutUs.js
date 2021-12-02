@@ -57,11 +57,11 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo, sortedInfo }) => {
           />
         );
       })}
-      <div className="row pt-3 pb-3">
-        <div className="col bg-dark text-white">
-          <div className="card notTimePadding bg-dark">
+      <div className="row mt-3 p-1 mt-3 mb-3">
+        <div className="col-12 bg-dark text-white">
+          <div className="card notTimePaddingMobile bg-dark">
             <div className="card-body">
-              <span className="ntpCardTitle1"> {noTimeInfo.title}</span>
+              <span className="ntpCardTitle1">{noTimeInfo.title}</span>
               {noTimeInfo.text.map(({ text, id }) => (
                 <p key={id} className="card-text">
                   {text}
@@ -70,13 +70,13 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo, sortedInfo }) => {
             </div>
           </div>
         </div>
-        <div className="col shadow-sm">
-          <div className="card notTimePadding cardBackImg">
+        <div className="col shadow-sm border">
+          <div className="card notTimePaddingMobile cardBackImgMobile">
             <div className="card-body">
               <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>
               <Link
                 to="/ContactUs"
-                className="btn btn-primary btnThemeClr NavGetInTouchUrl ml-0"
+                className="btn btn-primary btnThemeClr getInTouchBtnMobile"
               >
                 GET IN TOUCH
               </Link>

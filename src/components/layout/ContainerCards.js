@@ -11,6 +11,7 @@ const ContainerCards = ({
   url = '/ProjectList',
   showProject,
   locked,
+  id,
 }) => {
   const navigate = useNavigate();
   const redirectPage = (tabName) => {
@@ -33,7 +34,7 @@ const ContainerCards = ({
         <div
           className="projectBtn"
           onClick={() =>
-            locked ? showProject() : redirectPage('/ProjectList')
+            locked ? showProject() : redirectPage(`/ProjectList/${id}`)
           }
         >
           {btnTxt}

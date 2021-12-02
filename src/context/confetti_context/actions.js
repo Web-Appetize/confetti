@@ -81,10 +81,10 @@ const CCaction = (props) => {
     dispatch({ type: SET_SERVICE_INFO, payload: res.data });
   }
 
-  async function fetchProjectInfo() {
+  async function fetchProjectInfo(id) {
     setloading();
-    let res = await axios.get(`${hostName}/projects`);
-    dispatch({ type: SET_PROJECT_INFO, payload: res.data });
+    let res = await axios.get(`${hostName}/projects/${id}`);
+    dispatch({ type: SET_PROJECT_INFO, payload: [res.data] });
   }
 
   async function fetchNoTimeInfo() {
