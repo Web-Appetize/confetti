@@ -91,6 +91,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
               <form
                 method="post"
                 name="confetti"
+                data-netlify="true"
                 onSubmit={(e) => e.preventDefault()}
               >
                 <div className="form-group">
