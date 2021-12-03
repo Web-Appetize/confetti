@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Footer from '../../layout/Footer';
 import { Link } from 'react-router-dom';
 import ContainerCards from '../../layout/ContainerCards';
+import { sortBy } from 'lodash';
 const ww = window.innerWidth - 15;
 
 const Home = ({
@@ -33,6 +34,7 @@ const Home = ({
       setSlider(false);
     }
   };
+  const updatedContainerCards = sortBy([...containerCards], ['projectType']);
 
   return (
     <div
@@ -151,6 +153,11 @@ const Home = ({
                     title: lockInfo.title,
                     description: lockInfo.text,
                   })
+                }
+                showTitle={
+                  idx === 0 ||
+                  project.projectType !==
+                    updatedContainerCards[idx - 1].projectType
                 }
                 isLast={idx === containerCards.length - 1}
               />

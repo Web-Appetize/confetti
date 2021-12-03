@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Footer from '../../layout/Footer';
 import { Link, useNavigate } from 'react-router-dom';
 import ContainerCards from '../../layout/ContainerCards';
+import { sortBy } from 'lodash';
 
 const ww = window.innerWidth - 15;
 
@@ -36,6 +37,8 @@ const Home = ({
     document.getElementById('homeProjectModalBtn').click();
     setmodal(val);
   };
+
+  const updatedContainerCards = sortBy([...containerCards], ['projectType']);
 
   return (
     <div className="container-fluid homeContainer">
@@ -173,13 +176,18 @@ const Home = ({
       </div>
       {/* projects showcase */}
       <div className="mt-3">
-        {containerCards.map((project, idx) => {
+        {updatedContainerCards.map((project, idx) => {
           return (
             <ContainerCards
               key={idx}
               {...project}
               showProject={() => setmodalFn(!modal)}
               isLast={idx === containerCards.length - 1}
+              showTitle={
+                idx === 0 ||
+                project.projectType !==
+                  updatedContainerCards[idx - 1].projectType
+              }
             />
           );
         })}

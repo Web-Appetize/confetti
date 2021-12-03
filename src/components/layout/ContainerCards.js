@@ -12,6 +12,7 @@ const ContainerCards = ({
   showProject,
   locked,
   id,
+  showTitle,
 }) => {
   const navigate = useNavigate();
   const redirectPage = (tabName) => {
@@ -23,7 +24,9 @@ const ContainerCards = ({
       className={`row ${isMobile ? 'pl-0 pr-0 pt-3' : 'pl-5 pr-5 pt-5'} pb-0`}
     >
       <div className={`containerCards col-12 ${isMobile ? 'p-0' : ''}`}>
-        <div className="col-12 projectTitle">{projectType}</div>
+        <div className={`col-12 projectTitle ${showTitle ? '' : 'd-none'}`}>
+          {projectType}
+        </div>
         <img
           src={imageURL || defaultURL}
           alt={projectType}

@@ -40,7 +40,7 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
                 <div className="w-100 h4 themeClr">Industry</div>
                 <div className="w-100 h1">{project.industry}</div>
                 <div className="w-100 h4 themeClr">Project Type</div>
-                <div className="w-100 h1">{project.type}</div>
+                <div className="w-100 h1">{project.projectType}</div>
               </div>
               <div
                 id="carouselExampleSlidesOnly"
