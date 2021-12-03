@@ -160,6 +160,7 @@ nav {
   left: 5%;
   bottom: 60px;
   border: 1px solid;
+  cursor: pointer;
 }
 
 .projectTitle {
@@ -172,6 +173,7 @@ nav {
   color: black !important;
   font-size: 24px;
   box-shadow: -6px -6px black;
+  cursor: pointer;
 }
 
 .projectBtn:hover {
