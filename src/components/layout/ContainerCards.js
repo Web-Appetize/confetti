@@ -8,7 +8,6 @@ const ContainerCards = ({
   projectType,
   title: btnTxt,
   imageURL,
-  url = '/ProjectList',
   showProject,
   locked,
   id,

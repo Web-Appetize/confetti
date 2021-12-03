@@ -174,7 +174,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
               ))}
 
               <span
-                onClick={() => redirectPage('/ProjectList')}
+                onClick={() => redirectPage('/')}
                 className="btn btn-primary btnThemeClr getInTouchBtnMobile w-100 p-3 mt-2 mb-2"
               >
                 View Projects
