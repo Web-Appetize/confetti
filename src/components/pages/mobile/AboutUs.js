@@ -38,7 +38,7 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo, sortedInfo }) => {
       </div>
       <div className="row aboutUsStarCard-3"></div>
       <div className="row text-left">
-        <span className="h2 text-bold p-2">
+        <span className="h2 text-bold p-1">
           <strong>{title}</strong>{' '}
         </span>
       </div>
@@ -70,7 +70,7 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo, sortedInfo }) => {
             </div>
           </div>
         </div>
-        <div className="col shadow-sm border">
+        <div className="col">
           <div className="card notTimePaddingMobile cardBackImgMobile">
             <div className="card-body">
               <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>

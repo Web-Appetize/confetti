@@ -89,8 +89,8 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
                   </div>
                 )
               )}
-              <div className="p-3 text-center">
-                <h1 className="fs-55">IMPRESSED BY OUR WORK?</h1>
+              <div className="p-3 text-center w-100">
+                <h3>IMPRESSED BY OUR WORK?</h3>
                 <button
                   type="button"
                   class="btn btn-light impressend shadow-sm"

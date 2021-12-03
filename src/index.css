@@ -6,7 +6,7 @@
 html,
 body {
   overflow-x: hidden;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: mySFFont;
   background: white;
   margin: 0 !important;
   padding: 0 !important;
@@ -37,14 +37,14 @@ body {
 }
 
 .services {
-  height: 246px;
-  overflow: auto;
+  height: 294px;
+  overflow: hidden;
   border-radius: 0;
 }
 
 .getInTouchBtn {
-  position: relative;
-  top: 22px;
+  position: absolute;
+  bottom: 7%;
   font-weight: bold;
   padding: 5px 30px;
   border: none;
@@ -60,7 +60,7 @@ body {
 
 .services-list {
   margin-right: 10px;
-  border: none;
+  border-bottom: 1px solid black;
 }
 
 .services-list:hover {
@@ -147,7 +147,7 @@ nav {
 
 .ntpCardTitle2 {
   font-weight: bold;
-  font-size: 50px;
+  font-size: 45px;
 }
 
 .containerCards {
@@ -312,7 +312,7 @@ nav {
   color: white;
   margin: 15px;
   padding: 5px 30px;
-  font-size: 25px;
+  font-size: 20px;
   border: none;
 }
 
@@ -412,12 +412,10 @@ nav {
 }
 
 .mouse_scroll {
-  display: block;
-  margin: 1px auto;
-  width: 25px;
-  position: relative;
-  top: 180px;
-  left: -175px;
+  position: absolute;
+  top: 100px;
+  left: 25%;
+  margin: 0 auto;
 }
 
 .m_scroll_arrows {
@@ -664,6 +662,10 @@ nav {
   font-size: 55px;
 }
 
+.fs-20 {
+  font-size: 20px;
+}
+
 .fs-40 {
   font-size: 40px;
 }
@@ -690,8 +692,9 @@ nav {
 .testimonial {
   background-color: #a763f6;
   color: white;
-  width: 68%;
+  width: 82%;
   border-radius: 5px;
+  padding: 50px !important;
 }
 
 .fsstar {
@@ -699,15 +702,15 @@ nav {
 }
 
 .rightTopCaption {
-  top: 5% !important;
   right: 5% !important;
   left: unset;
+  position: fixed;
 }
 
 .projectTitleText {
   background: black;
   width: 350px;
-  font-size: 19px;
+  font-size: 18px;
   padding: 20px;
   border-radius: 5px;
   text-align: left;
@@ -728,8 +731,12 @@ nav {
   font-weight: bold;
 }
 
+.mt-15 {
+  margin-top: 15px;
+}
+
 .impressend {
-  font-size: 31px;
+  font-size: 25px;
   border: 1px solid;
   padding: 10px 25px;
 }
@@ -758,4 +765,8 @@ nav {
 
 .top5px {
   top: 5px;
+}
+
+.w-75 {
+  width: 90% !important;
 }

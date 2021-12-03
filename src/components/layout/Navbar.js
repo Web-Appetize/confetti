@@ -119,7 +119,7 @@ const Navbar = () => {
                 </button>
               </span>
             </li>
-            <li className="nav-item ">
+            <li className="nav-item mr-5">
               <span
                 className="nav-link"
                 onClick={() => redirectPage('/ContactUs')}

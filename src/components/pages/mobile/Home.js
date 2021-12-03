@@ -118,13 +118,13 @@ const Home = ({
         </div>
         <div className="w-100"></div>
         <div className="col-12 p-0">
-          <div className="card services h-auto shadow-sm border border-secondary rounded">
+          <div className="card services h-auto">
             <ul className="list-group list-group-flush">
               {services.map(({ title, url = '/' }, idx) => {
                 return (
                   <Link key={idx} className="list-group-item p-0" to={url}>
                     <li
-                      className="list-group-item text-dark services-list"
+                      className="list-group-item text-dark services-list border-bottom-secondary"
                       onClick={() => setCurrentDescFn(services[idx])}
                     >
                       <div className="d-flex justify-content-between">
@@ -178,7 +178,7 @@ const Home = ({
             </div>
           </div>
         </div>
-        <div className="col shadow-sm border">
+        <div className="col">
           <div className="card notTimePaddingMobile cardBackImgMobile">
             <div className="card-body">
               <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>

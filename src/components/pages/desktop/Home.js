@@ -122,11 +122,11 @@ const Home = ({
         </div>
         <div className="w-100"></div>
         <div className="col">
-          <div className="card services shadow-sm border rounded">
+          <div className="card services">
             <ul className="list-group list-group-flush">
               {services.map(({ title, url = '/' }, idx) => {
                 return (
-                  <Link key={idx} className="list-group-item p-0" to={url}>
+                  <Link key={idx} className="list-group-item p-0 border-bottom" to={url}>
                     <li
                       className="list-group-item text-dark services-list"
                       onMouseOver={() => setCurrentDesc(services[idx])}
@@ -145,7 +145,7 @@ const Home = ({
           </div>
         </div>
         <div className="col">
-          <div className="card services shadow-sm border rounded">
+          <div className="card services shadow-sm rounded">
             <div className="card-body">
               <h3 className="card-title mb-3">
                 {currentServiceTitle}{' '}
@@ -166,7 +166,7 @@ const Home = ({
 
               <span
                 onClick={() => redirectPage('/ContactUs')}
-                className="btn btn-primary btnThemeClr getInTouchBtn"
+                className="btn btn-primary btnThemeClr getInTouchBtn fs-20"
               >
                 GET IN TOUCH
               </span>
@@ -193,7 +193,7 @@ const Home = ({
         })}
       </div>
 
-      <div className="row mt-3 p-5 m-1">
+      <div className="row mt-5 p-5 m-1">
         <div className="col bg-dark text-white">
           <div className="card notTimePadding bg-dark">
             <div className="card-body">
@@ -206,10 +206,10 @@ const Home = ({
             </div>
           </div>
         </div>
-        <div className="col shadow-sm border">
+        <div className="col">
           <div className="card notTimePadding cardBackImg">
             <div className="card-body">
-              <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>
+              <h3 className="card-title ntpCardTitle2 mt-15">{sortedInfo.text}</h3>
               <span
                 key={getInTouchUrl}
                 onClick={() => redirectPage('/ContactUs')}

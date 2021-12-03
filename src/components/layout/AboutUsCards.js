@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { isMobile } from 'react-device-detect';
 import defaultURL from '../../imgs/sampleWall.jpg';
