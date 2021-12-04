@@ -45,7 +45,7 @@ const Navbar = () => {
           <span
             key="NavGetInTouchUrl"
             onClick={() => closeOverlayandnavigate('/ContactUs')}
-            className={`btn btn-primary btnThemeClr NavGetInTouchUrl text-white font-weight-bold fs-25 pt-3 pb-3 ${
+            className={`btn btn-primary btnThemeClr NavGetInTouchUrl text-white font-weight-bold fs-25 pt-2 pb-2 ${
               open ? '' : 'd-none'
             }`}
           >

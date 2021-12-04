@@ -150,7 +150,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                 </div>
                 <button
                   // type="submit"
-                  className="btn btn-default btn-secondary w-100 p-3 pt-2 pb-2 fs-20 btnThemeClr font-weight-bold"
+                  className="btn btn-default btn-secondary w-100 p-1 pt-2 pb-2 fs-20 btnThemeClr font-weight-bold"
                   data-toggle="modal"
                   onClick={() => setSlider(!slider)}
                 >

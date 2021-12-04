@@ -280,7 +280,7 @@ nav {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 12;
   top: 0;
   left: 0;
   background-color: black;
@@ -320,8 +320,8 @@ nav {
 .navOverlayBottomText {
   position: absolute;
   bottom: 0;
-  font-size: 20px !important;
-  padding: 15px !important;
+  font-size: 18px !important;
+  padding: 10px 40px !important;
 }
 
 .customToggler {
@@ -766,16 +766,28 @@ nav {
   font-weight: bold;
 }
 
+.navbar-brand {
+  z-index: 5;
+}
+
+.navbar-toggler {
+  z-index: 5;
+}
+
 .projectTitleTextMobile {
   background: black;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  font-size: 21px;
+  font-size: 18px;
   padding: 25px;
-  z-index: 100;
+  z-index: 10;
   font-weight: bold;
+}
+
+.navbar {
+  z-index: 12;
 }
 
 .mt-15 {
