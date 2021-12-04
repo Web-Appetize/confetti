@@ -16,6 +16,13 @@ body {
   background: #a763f6;
 }
 
+.disabledBtn {
+  background: #dddddd;
+  border: none;
+  padding: 5px 35px;
+  color: gray;
+}
+
 .themeClr {
   color: #a763f6;
 }
@@ -54,7 +61,6 @@ body {
   position: relative;
   font-weight: bold;
   padding: 5px 30px;
-  font-size: 30px;
   width: 100%;
 }
 
@@ -85,8 +91,12 @@ body {
 }
 
 .videoContent video {
-  /* width: 100%; */
+  width: 100%;
   display: block;
+}
+
+.widthUnset {
+  width: unset !important;
 }
 
 .videoContent:before {
@@ -107,8 +117,11 @@ body {
   font-size: 68px;
   font-weight: bold;
   line-height: 80px;
-  bottom: 30%;
   left: 10%;
+  bottom: 10%;
+}
+
+@media screen and (min-width: 1600px) {
 }
 
 nav {
@@ -200,6 +213,11 @@ nav {
   margin-bottom: 15px;
 }
 
+.justifyCenter {
+  display: flex;
+  justify-content: space-around;
+}
+
 .footerIcon {
   font-size: 30px;
   background: white;
@@ -208,6 +226,7 @@ nav {
   border-radius: 5px;
   cursor: pointer;
   margin-right: 10px;
+  border: 1px solid;
 }
 
 .iconBorder {
@@ -264,10 +283,10 @@ nav {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: black;
   overflow-x: hidden;
-  transition: 0.1s;
+  color: white;
+  transition: 0.4s;
 }
 
 .overlay-content {
@@ -282,7 +301,6 @@ nav {
   padding: 8px;
   text-decoration: none;
   font-size: 36px;
-  color: #818181;
   display: block;
   transition: 0.3s;
 }
@@ -297,6 +315,13 @@ nav {
   top: 20px;
   right: 45px;
   font-size: 60px;
+}
+
+.navOverlayBottomText {
+  position: absolute;
+  bottom: 0;
+  font-size: 20px !important;
+  padding: 15px !important;
 }
 
 .customToggler {
@@ -337,7 +362,7 @@ nav {
 }
 
 .slider .transparent {
-  background: #00000036;
+  background: #000000e8;
   height: 40%;
 }
 
@@ -381,8 +406,25 @@ nav {
   border: 1px solid gray;
 }
 
-.contactUsCard input::placeholder {
+.form-control::-webkit-input-placeholder {
   color: gainsboro;
+} /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder {
+  color: gainsboro;
+} /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder {
+  color: gainsboro;
+} /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder {
+  color: gainsboro;
+} /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder {
+  color: gainsboro;
+}
+
+.contactUsCard textarea {
+  border-radius: 0;
+  border: 1px solid gray;
 }
 
 .contactUsCard .input-group-text {
@@ -390,6 +432,10 @@ nav {
   border: 0;
   border-bottom: 1px solid;
   border-radius: 0;
+}
+
+.bottom10 {
+  bottom: 10px !important;
 }
 
 .contactUsCardNoBorder input {
@@ -413,9 +459,8 @@ nav {
 
 .mouse_scroll {
   position: absolute;
-  top: 100px;
-  left: 25%;
-  margin: 0 auto;
+  margin-left: 42%;
+  top: -70%;
 }
 
 .m_scroll_arrows {
@@ -622,7 +667,7 @@ nav {
 .cardBackImg {
   background-image: url('./imgs/star.svg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: right;
 }
 
 .cardBackImgMobile {
@@ -663,7 +708,11 @@ nav {
 }
 
 .fs-20 {
-  font-size: 20px;
+  font-size: 20px !important;
+}
+
+.fs-25 {
+  font-size: 25px !important;
 }
 
 .fs-40 {
@@ -692,9 +741,9 @@ nav {
 .testimonial {
   background-color: #a763f6;
   color: white;
-  width: 82%;
+  width: 55%;
   border-radius: 5px;
-  padding: 50px !important;
+  padding: 35px !important;
 }
 
 .fsstar {
@@ -723,11 +772,9 @@ nav {
   left: 0;
   bottom: 0;
   width: 100%;
-  font-size: 22px;
+  font-size: 21px;
   padding: 25px;
-  border-radius: 5px;
   z-index: 100;
-  text-align: left;
   font-weight: bold;
 }
 
@@ -736,9 +783,8 @@ nav {
 }
 
 .impressend {
-  font-size: 25px;
   border: 1px solid;
-  padding: 10px 25px;
+  padding: 5px 25px;
 }
 
 .impressend:hover {
@@ -768,5 +814,5 @@ nav {
 }
 
 .w-75 {
-  width: 90% !important;
+  width: 60% !important;
 }

@@ -78,7 +78,7 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo , sortedInfo }) => {
         <div className="col">
           <div className="card notTimePadding cardBackImg">
             <div className="card-body">
-              <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>
+              <h3 className="card-title ntpCardTitle2 mt-5">{sortedInfo.text}</h3>
               <Link
                 to="/ContactUs"
                 className="btn btn-primary btnThemeClr NavGetInTouchUrl ml-0"

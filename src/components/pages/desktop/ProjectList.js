@@ -25,16 +25,16 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
           <>
             <div className="row">
               <div className="p-5">
-                <div className="w-100 h5">CLIENT</div>
-                <div className="w-100 h1 font-weight-bolder">
+                <div className="w-100 h6">CLIENT</div>
+                <div className="w-100 h1 font-weight-bolder mb-4">
                   {project.client}
                 </div>
-                <div className="w-100 h5">INDUSTRY</div>
-                <div className="w-100 h1 font-weight-bolder">
+                <div className="w-100 h6">INDUSTRY</div>
+                <div className="w-100 h1 font-weight-bolder mb-4">
                   {project.industry}
                 </div>
-                <div className="w-100 h5">PROJECT TYPE</div>
-                <div className="w-100 h1 font-weight-bolder">
+                <div className="w-100 h6">PROJECT TYPE</div>
+                <div className="w-100 h1 font-weight-bolder mb-4">
                   {project.type}
                 </div>
               </div>
@@ -68,7 +68,7 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
                   </div>
                 </div>
               </div>
-              <div className="h5 mt-5 w-75 mx-auto text-secondary">
+              <div className="h5 pl-5 pr-5 pb-5 mt-5 w-75 mx-auto text-secondary">
                 {project.subtitle}
               </div>
               {projectCards.map((project, idx) => {
@@ -100,7 +100,7 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
                 <h1>IMPRESSED BY OUR WORK?</h1>
                 <button
                   type="button"
-                  class="h4 btn btn-light impressend shadow-sm"
+                  class="h6 btn btn-light impressend shadow-sm"
                   onClick={() => redirectPage('/')}
                 >
                   VIEW OTHER PROJECTS

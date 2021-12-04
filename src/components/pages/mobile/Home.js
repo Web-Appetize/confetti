@@ -70,7 +70,7 @@ const Home = ({
 
             <Link
               to="/ContactUs"
-              className="btn btn-primary btnThemeClr getInTouchBtnMobile w-100 p-3 mt-2 mb-2"
+              className="btn btn-primary btnThemeClr getInTouchBtnMobile w-100 p-2 mt-2 mb-2 fs-20"
             >
               GET IN TOUCH
             </Link>
@@ -88,7 +88,12 @@ const Home = ({
               className="carousel-item active text-center videoContent"
               id="videoContentIdMobile"
             >
-              <video loop={true} autoPlay="autoplay" muted>
+              <video
+                className="widthUnset"
+                loop={true}
+                autoPlay="autoplay"
+                muted
+              >
                 <source src={videoUrl} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
@@ -110,7 +115,7 @@ const Home = ({
           </div>
         </div>
       </div>
-      <div className="mt-3 row pl-1 pr-1 pt-1 pb-0">
+      <div className="mt-5 row pl-1 pr-1 pt-1 pb-0">
         <div className="col">
           <span className="projectTitle">
             <strong>HOW CAN WE HELP YOU?</strong>{' '}
@@ -141,13 +146,14 @@ const Home = ({
           </div>
         </div>
       </div>
-      <div className="mt-3">
+      <div className="mt-0">
         {containerCards.map((project, idx) => {
           return (
             <>
               <ContainerCards
                 key={idx}
                 {...project}
+                index={idx}
                 showProject={() =>
                   setCurrentDescFn({
                     title: lockInfo.title,
@@ -165,7 +171,7 @@ const Home = ({
           );
         })}
       </div>
-      <div className="row mt-3 p-1 mt-3 mb-3">
+      <div className="row mt-5 p-1 mt-5 mb-3">
         <div className="col-12 bg-dark text-white">
           <div className="card notTimePaddingMobile bg-dark">
             <div className="card-body">
@@ -178,7 +184,7 @@ const Home = ({
             </div>
           </div>
         </div>
-        <div className="col">
+        <div className="col p-0 mt-3">
           <div className="card notTimePaddingMobile cardBackImgMobile">
             <div className="card-body">
               <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>

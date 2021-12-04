@@ -32,7 +32,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                     <div className="input-group mb-2">
                       <div className="input-group-prepend">
                         <div className="input-group-text">
-                          <i className="fa fa-phone" aria-hidden="true"></i>
+                          <i className="fa fa-phone-alt" aria-hidden="true"></i>
                         </div>
                       </div>
                       <input
@@ -50,7 +50,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                   </div>
                 </div>
               </div>
-              <div className="text-center">
+              <div className="justifyCenter">
                 <span onClick={() => window.open(mail)}>
                   <span className="footerIcon">
                     <i className="far fa-envelope"></i>
@@ -87,7 +87,11 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
         <div className="col-12 mt-3 mb-3 p-0">
           <div className="card contactUsCard hAuto shadow-sm border-0">
             <div className="card-body">
-              <span className="ntpCardTitle1">WE’D LOVE TO HEAR FROM YOU!</span>
+              <span className="h1 font-weight-bold">
+                WE’D LOVE TO HEAR FROM YOU!
+              </span>
+              <br />
+              <br />
               <form
                 method="post"
                 name="confetti"
@@ -146,7 +150,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                 </div>
                 <button
                   // type="submit"
-                  className="btn btn-default btn-secondary"
+                  className="btn btn-default btn-secondary w-100 p-3 pt-2 pb-2 fs-20 btnThemeClr font-weight-bold"
                   data-toggle="modal"
                   onClick={() => setSlider(!slider)}
                 >
@@ -183,7 +187,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
           </div>
         </div>
       </div>
-      {connectInfo && <Footer {...connectInfo} />}
+      <div className="mt-5">{connectInfo && <Footer {...connectInfo} />}</div>
     </div>
   );
 };

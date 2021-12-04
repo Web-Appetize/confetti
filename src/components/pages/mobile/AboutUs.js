@@ -70,7 +70,7 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo, sortedInfo }) => {
             </div>
           </div>
         </div>
-        <div className="col">
+        <div className="col p-0 mt-3">
           <div className="card notTimePaddingMobile cardBackImgMobile">
             <div className="card-body">
               <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>

@@ -14,23 +14,21 @@ const ContainerCards = ({
 }) => {
   return (
     <div className={`row ${isMobile ? 'pl-1 pr-1 pt-1' : 'pl-5 pr-5 pt-5'}`}>
-      <div class="card w-100 shadow-sm">
+      <div class="card w-100">
         <div class="card-header h1 font-weight-bold">{title}</div>
         <img
           src={imageURL || defaultURL}
           alt={projectType}
-          width={'100%'}
-          height="600"
-          className="card-img-top"
+          className="card-img-top img-responsive w-100"
         />
         {subtitle && (
           <div class="card-body">
             {subtitle && <h5 class="card-title">{subtitle}</h5>}
           </div>
         )}
-        <ul class="list-group list-group-flush border">
+        <ul class="list-group list-group-flush">
           {text.map(({ text: label }) => (
-            <li class="list-group-item">{label}</li>
+            <li class="list-group-item border-0 p-1 pt-3">{label}</li>
           ))}
         </ul>
       </div>

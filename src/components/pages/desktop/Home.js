@@ -84,7 +84,7 @@ const Home = ({
       <div className="row">
         <div
           id="carouselExampleSlidesOnly"
-          className="carousel slide"
+          className="carousel slide w-100"
           data-ride="carousel"
         >
           <div className="carousel-inner">
@@ -100,7 +100,7 @@ const Home = ({
               <div className="carousel-caption d-md-block">
                 <span>{title}</span>
               </div>
-              <div className="carousel-caption m-auto">
+              <div className="carousel-caption w-100 m-auto">
                 <div class="mouse_scroll mt-5">
                   <div class="mouse">
                     <div class="wheel"></div>
@@ -126,7 +126,11 @@ const Home = ({
             <ul className="list-group list-group-flush">
               {services.map(({ title, url = '/' }, idx) => {
                 return (
-                  <Link key={idx} className="list-group-item p-0 border-bottom" to={url}>
+                  <Link
+                    key={idx}
+                    className="list-group-item p-0 border-bottom"
+                    to={url}
+                  >
                     <li
                       className="list-group-item text-dark services-list"
                       onMouseOver={() => setCurrentDesc(services[idx])}
@@ -183,6 +187,7 @@ const Home = ({
               {...project}
               showProject={() => setmodalFn(!modal)}
               isLast={idx === containerCards.length - 1}
+              index={idx}
               showTitle={
                 idx === 0 ||
                 project.projectType !==
@@ -209,7 +214,9 @@ const Home = ({
         <div className="col">
           <div className="card notTimePadding cardBackImg">
             <div className="card-body">
-              <h3 className="card-title ntpCardTitle2 mt-15">{sortedInfo.text}</h3>
+              <h3 className="card-title ntpCardTitle2 mt-5">
+                {sortedInfo.text}
+              </h3>
               <span
                 key={getInTouchUrl}
                 onClick={() => redirectPage('/ContactUs')}

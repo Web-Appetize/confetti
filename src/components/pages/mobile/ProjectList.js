@@ -28,19 +28,19 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
               NOW LETS WORK ON YOUR PROJECT{' '}
               <span
                 onClick={() => redirectPage('/ContactUs')}
-                className="btn btn-primary btnThemeClr mt-2 w-100 fs-40"
+                className="btn btn-primary btnThemeClr mt-3 mb-3 p-2 w-100 fs-25"
               >
                 <strong>GET IN TOUCH</strong>
               </span>
             </div>
             <div className="row">
               <div className="p-5">
-                <div className="w-100 h4 themeClr">Client</div>
-                <div className="w-100 h1">{project.client}</div>
-                <div className="w-100 h4 themeClr">Industry</div>
-                <div className="w-100 h1">{project.industry}</div>
-                <div className="w-100 h4 themeClr">Project Type</div>
-                <div className="w-100 h1">{project.projectType}</div>
+                <div className="w-100 h6">Client</div>
+                <div className="w-100 h1 mb-3 font-weight-bold">{project.client}</div>
+                <div className="w-100 h6">Industry</div>
+                <div className="w-100 h1 mb-3 font-weight-bold">{project.industry}</div>
+                <div className="w-100 h6">Project Type</div>
+                <div className="w-100 h1 mb-3 font-weight-bold">{project.projectType}</div>
               </div>
               <div
                 id="carouselExampleSlidesOnly"
@@ -57,7 +57,7 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
                   </div>
                 </div>
               </div>
-              <div className="h4 mt-5 w-75 mx-auto text-secondary">
+              <div className="h4 m-5 p-3 w-100 mx-auto text-secondary">
                 {project.subtitle}
               </div>
               {projectCards.map((project, idx) => {
@@ -83,17 +83,17 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
                           <i class="fas fa-star mr-1 fsstar"></i>
                         ))}
                     </div>
-                    <div className="font-weight-bold h3">{testimonial}</div>
+                    <div className="font-weight-bold h3 mt-3 mb-3">{testimonial}</div>
                     <div className="h4">{author}</div>
-                    <div className="h5">{designation}</div>
+                    <div className="h6">{designation}</div>
                   </div>
                 )
               )}
-              <div className="p-3 text-center w-100">
-                <h3>IMPRESSED BY OUR WORK?</h3>
+              <div className="p-3 text-center mt-5 w-100">
+                <h1 className="font-weight-bold text-left">IMPRESSED BY OUR WORK?</h1>
                 <button
                   type="button"
-                  class="btn btn-light impressend shadow-sm"
+                  class="btn font-weight-bold pt-3 pb-3 btn-light impressend shadow-sm w-100 mt-3"
                   onClick={() => redirectPage('/ContactUs')}
                 >
                   VIEW OTHER PROJECTS

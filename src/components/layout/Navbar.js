@@ -45,13 +45,22 @@ const Navbar = () => {
           <span
             key="NavGetInTouchUrl"
             onClick={() => closeOverlayandnavigate('/ContactUs')}
-            className={`btn btn-primary btnThemeClr NavGetInTouchUrl text-white font-weight-bold ${
+            className={`btn btn-primary btnThemeClr NavGetInTouchUrl text-white font-weight-bold fs-25 pt-3 pb-3 ${
               open ? '' : 'd-none'
             }`}
           >
             GET IN TOUCH
           </span>
         </div>
+        <span
+          className={`navOverlayBottomText h6 text-center ${
+            open ? '' : 'd-none'
+          }`}
+          role="img"
+          aria-labelledby="img"
+        >
+          WE TAKE CARE OF YOUR BRAND LIKE ITS OUR CHILD 💜
+        </span>
       </div>
       <nav
         className={`navbar navbar-expand-lg navbar-light ${

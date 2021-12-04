@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { isMobile } from 'react-device-detect';
 import defaultURL from '../../imgs/sampleWall.jpg';
 import { useNavigate } from 'react-router-dom';
+const homeProjectTitles = ['SELECTED UI/UX DESIGN', 'GRAPHIC DESIGN'];
 
 const ContainerCards = ({
   projectType,
@@ -12,6 +13,9 @@ const ContainerCards = ({
   locked,
   id,
   showTitle,
+  titles,
+  key,
+  index,
 }) => {
   const navigate = useNavigate();
   const redirectPage = (tabName) => {
@@ -20,24 +24,26 @@ const ContainerCards = ({
 
   return (
     <div
-      className={`row ${isMobile ? 'pl-0 pr-0 pt-3' : 'pl-5 pr-5 pt-5'} pb-0`}
+      className={`row ${isMobile ? 'pl-0 pr-0 pt-5' : 'pl-5 pr-5 pt-5'} pb-0`}
     >
       <div className={`containerCards col-12 ${isMobile ? 'p-0' : ''}`}>
-        <div className={`col-12 projectTitle ${showTitle ? 'mt-3 mb-3' : 'd-none'}`}>
-          {projectType}
+        <div
+          className={`col-12 h1 font-weight-bolder ${
+            showTitle ? 'mt-3 mb-3' : 'd-none'
+          }`}
+        >
+          {homeProjectTitles[index]}
         </div>
         <img
           src={imageURL || defaultURL}
-          alt={projectType}
-          width={'100%'}
-          height={isMobile ? '300' : '600'}
-          className="shadow-sm img-responsive"
+          alt={homeProjectTitles[index]}
+          className="shadow-sm img-responsive w-100"
           onClick={() =>
             locked ? showProject() : redirectPage(`/ProjectList/${id}`)
           }
         />
         <div
-          className="projectBtn"
+          className={`projectBtn ${isMobile ? 'bottom10' : ''}`}
           onClick={() =>
             locked ? showProject() : redirectPage(`/ProjectList/${id}`)
           }

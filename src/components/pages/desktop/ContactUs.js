@@ -17,9 +17,11 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
     <div className="container-fluid">
       <div className="row p-5">
         <div className="col">
-          <div className="card contactUsCard hAuto shadow-sm border-0">
+          <div className="card contactUsCard hAuto border-0">
             <div className="card-body">
-              <span className="ntpCardTitle1">WE’D LOVE TO HEAR FROM YOU!</span>
+              <span className="h1 font-weight-bold">
+                WE’D LOVE TO HEAR FROM YOU!
+              </span>
               <form
                 method="post"
                 name="confetti"
@@ -68,17 +70,18 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                 </div>
                 <div className="form-group">
                   <label for="message">MESSAGE :</label>
-                  <input
-                    type="text"
-                    className="form-control"
+                  <textarea
+                    class="form-control"
                     id="message"
-                    placeholder="HOW CAN WE HELP YOU ?"
+                    rows="3"
                     name="message"
-                  />
+                    placeholder="HOW CAN WE HELP YOU ?"
+
+                  ></textarea>
                 </div>
                 <button
                   // type="submit"
-                  className="btn btn-default btn-secondary"
+                  className="btn btn-default disabledBtn"
                   data-toggle="modal"
                   data-target="#sendMessage"
                 >
@@ -89,7 +92,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
           </div>
         </div>
         <div className="col">
-          <div className="card contactUsCard contactUsCardNoBorder border-0 shadow-sm">
+          <div className="card contactUsCard contactUsCardNoBorder border-0">
             <div className="card-body">
               <h3 className="card-title ntpCardTitle2 text-normal">
                 GET IN TOUCH
@@ -100,21 +103,21 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                     <label className="sr-only" for="inlineFormInputGroup">
                       Username
                     </label>
-                    <div className="input-group mb-2">
+                    <div className="input-group mb-3">
                       <div className="input-group-prepend">
-                        <div className="input-group-text">
-                          <i className="fa fa-phone" aria-hidden="true"></i>
+                        <div className="fs-25 input-group-text ">
+                          <i className="fa fa-phone-alt" aria-hidden="true"></i>
                         </div>
                       </div>
                       <input
                         type="text"
-                        className="form-control"
+                        className="fs-25 form-control"
                         id="inlineFormInputGroup"
                         placeholder=""
                       />
                       <div className="input-group-append">
-                        <span className="input-group-text" id="basic-addon2">
-                          +91 9931230819
+                        <span className="fs-25 input-group-text " id="basic-addon2">
+                          +91 7817920743
                         </span>
                       </div>
                     </div>
@@ -189,7 +192,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
           </div>
         </div>
       </div>
-      {connectInfo && <Footer {...connectInfo} />}
+      <div className="mt-5">{connectInfo && <Footer {...connectInfo} />}</div>
     </div>
   );
 };
