@@ -219,7 +219,7 @@ nav {
 }
 
 .footerMobile {
-  padding: 5px;
+  padding: 10px;
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 15px;
@@ -375,14 +375,14 @@ nav {
 
 .slider .transparent {
   background: #000000e8;
-  height: 40%;
+  height: 45%;
 }
 
 .slider .content {
   background-color: white;
   padding: 10px;
   color: black;
-  height: 70%;
+  height: 65%;
   z-index: 10;
 }
 

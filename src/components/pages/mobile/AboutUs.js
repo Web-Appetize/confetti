@@ -12,7 +12,7 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo, sortedInfo }) => {
   const {
     title,
     subtitle,
-    coverImageWebURL = noImg,
+    coverImageMobileURL = noImg,
     card,
     cardWithMedia,
   } = aboutInfo;
@@ -29,7 +29,7 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo, sortedInfo }) => {
             <div class="carousel-item active">
               <img
                 class="d-block w-100"
-                src={coverImageWebURL || intro}
+                src={coverImageMobileURL || intro}
                 alt="title"
               />
             </div>
@@ -38,12 +38,12 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo, sortedInfo }) => {
       </div>
       <div className="row aboutUsStarCard-3"></div>
       <div className="row text-left">
-        <span className="h2 text-bold p-1">
+        <span className="h3 text-bold p-4">
           <strong>{title}</strong>{' '}
         </span>
       </div>
       <div className="row text-left">
-        <span className="h2 text-bold p-1">
+        <span className="h3 text-bold p-4">
           <strong>{subtitle}</strong>{' '}
         </span>
       </div>

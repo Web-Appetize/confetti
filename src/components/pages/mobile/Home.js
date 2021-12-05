@@ -115,7 +115,7 @@ const Home = ({
           </div>
         </div>
       </div>
-      <div className="mt-5 row pl-1 pr-1 pt-1 pb-0">
+      <div className="mt-5 row pl-1 pr-1 pt-5 pb-5">
         <div className="col">
           <span className="projectTitle">
             <strong>HOW CAN WE HELP YOU?</strong>{' '}
@@ -171,7 +171,7 @@ const Home = ({
           );
         })}
       </div>
-      <div className="row mt-5 p-1 mt-5 mb-3">
+      <div className="row mt-5 p-1 pt-5 mt-5 mb-3">
         <div className="col-12 bg-dark text-white">
           <div className="card notTimePaddingMobile bg-dark">
             <div className="card-body">
@@ -190,7 +190,7 @@ const Home = ({
               <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>
               <Link
                 to="/ContactUs"
-                className="btn btn-primary btnThemeClr getInTouchBtnMobile"
+                className="btn pb-4 pt-4 btn-primary btnThemeClr getInTouchBtnMobile"
               >
                 GET IN TOUCH
               </Link>
