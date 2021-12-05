@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../../layout/Footer';
 import { Link } from 'react-router-dom';
 import ContainerCards from '../../layout/ContainerCards';
@@ -13,6 +13,11 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
   };
 
   const { instagram, mail, linkedin, behance, dribble } = connectInfo;
+  const [name, setname] = useState('');
+  const [email, setemail] = useState('');
+  const [company, setcompany] = useState('');
+  const [subject, setsubject] = useState('');
+  const [message, setmessage] = useState('');
   return (
     <div className="container-fluid">
       <div className="row p-5">
@@ -36,6 +41,8 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                     id="name"
                     placeholder="RISHABH JAIN"
                     name="name"
+                    value={name}
+                    onChange={(e) => setname(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
@@ -46,6 +53,8 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                     id="email"
                     placeholder="NAME@EXAMPLE.COM"
                     name="email"
+                    value={email}
+                    onChange={(e) => setemail(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
@@ -56,6 +65,8 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                     id="company"
                     placeholder="'YOUR COMPANY'"
                     name="company"
+                    value={company}
+                    onChange={(e) => setcompany(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
@@ -66,6 +77,8 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                     id="subject"
                     placeholder="UI / UX DESIGN"
                     name="subject"
+                    value={subject}
+                    onChange={(e) => setsubject(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
@@ -76,12 +89,17 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                     rows="3"
                     name="message"
                     placeholder="HOW CAN WE HELP YOU ?"
-
+                    value={message}
+                    onChange={(e) => setmessage(e.target.value)}
                   ></textarea>
                 </div>
                 <button
                   // type="submit"
-                  className="btn btn-default contactUsSendBtn"
+                  className={`btn btn-default  ${
+                    name && email && company && subject && message
+                      ? 'contactUsSendBtn'
+                      : 'disabledBtn'
+                  }`}
                   data-toggle="modal"
                   data-target="#sendMessage"
                 >
@@ -116,7 +134,10 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                         placeholder=""
                       />
                       <div className="input-group-append">
-                        <span className="fs-25 input-group-text text-dark" id="basic-addon2">
+                        <span
+                          className="fs-25 input-group-text text-dark"
+                          id="basic-addon2"
+                        >
                           +91 7817920743
                         </span>
                       </div>

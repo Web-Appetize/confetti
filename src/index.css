@@ -27,7 +27,7 @@ body {
   padding: 5px 35px;
   background: #a763f6 !important;
   color: white !important;
-  font-weight: bold;
+  border: none;
 }
 
 .themeClr {

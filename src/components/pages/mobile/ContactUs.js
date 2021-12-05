@@ -13,6 +13,11 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
     navigate(tabName);
   };
   const [slider, setSlider] = useState(false);
+  const [name, setname] = useState('');
+  const [email, setemail] = useState('');
+  const [company, setcompany] = useState('');
+  const [subject, setsubject] = useState('');
+  const [message, setmessage] = useState('');
   const { instagram, mail, linkedin, behance, dribble } = connectInfo;
   return (
     <div className="container-fluid">
@@ -106,6 +111,8 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                     id="name"
                     placeholder="RISHABH JAIN"
                     name="name"
+                    value={name}
+                    onChange={(e) => setname(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
@@ -116,6 +123,8 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                     id="email"
                     placeholder="NAME@EXAMPLE.COM"
                     name="email"
+                    value={email}
+                    onChange={(e) => setemail(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
@@ -126,6 +135,8 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                     id="company"
                     placeholder="'YOUR COMPANY'"
                     name="company"
+                    value={company}
+                    onChange={(e) => setcompany(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
@@ -136,6 +147,8 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                     id="subject"
                     placeholder="UI / UX DESIGN"
                     name="subject"
+                    value={subject}
+                    onChange={(e) => setsubject(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
@@ -146,12 +159,17 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                     rows="3"
                     name="message"
                     placeholder="HOW CAN WE HELP YOU ?"
-
+                    value={message}
+                    onChange={(e) => setmessage(e.target.value)}
                   ></textarea>
                 </div>
                 <button
                   // type="submit"
-                  className="btn btn-default btn-secondary w-100 p-1 pt-2 pb-2 fs-20 btnThemeClr font-weight-bold"
+                  className={`btn btn-default btn-secondary w-100 p-1 pt-2 pb-2 fs-20 font-weight-bold ${
+                    name && email && company && subject && message
+                      ? 'btnThemeClr'
+                      : 'disabledBtn'
+                  }`}
                   data-toggle="modal"
                   onClick={() => setSlider(!slider)}
                 >
