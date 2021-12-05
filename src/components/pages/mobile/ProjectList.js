@@ -83,8 +83,8 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
                           <i class="fas fa-star mr-1 fsstar"></i>
                         ))}
                     </div>
-                    <div className="font-weight-bold h3 mt-3 mb-3">{testimonial}</div>
-                    <div className="h4">{author}</div>
+                    <div className="font-weight-bold h3 mt-3 mb-3 pt-1">{testimonial}</div>
+                    <div className="h4 pt-1">{author}</div>
                     <div className="h6">{designation}</div>
                   </div>
                 )

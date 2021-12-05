@@ -8,7 +8,7 @@ const ContainerCards = ({
   title,
   text,
   subtitle,
-  imageURL,
+  media,
   url = '',
   showProject,
 }) => {
@@ -16,11 +16,14 @@ const ContainerCards = ({
     <div className={`row ${isMobile ? 'pl-1 pr-1 pt-1' : 'pl-5 pr-5 pt-5'}`}>
       <div class="card w-100">
         <div class="card-header h1 font-weight-bold">{title}</div>
-        <img
-          src={imageURL || defaultURL}
-          alt={projectType}
-          className="card-img-top img-responsive w-100"
-        />
+        {media &&
+          media.map(({ url: imageURL }) => (
+            <img
+              src={imageURL || defaultURL}
+              alt={projectType}
+              className="card-img-top mb-2 img-responsive"
+            />
+          ))}
         {subtitle && (
           <div class="card-body">
             {subtitle && <h5 class="card-title">{subtitle}</h5>}

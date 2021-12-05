@@ -172,7 +172,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
             <div className="dataContainer">
               <div className="title">{msgSentInfo.title}</div>
               {msgSentInfo.text.map(({ text, id }) => (
-                <div key={id} className="h4 mb-3">
+                <div key={id} className="h5 mb-3">
                   {text}
                 </div>
               ))}
