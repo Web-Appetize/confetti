@@ -22,7 +22,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-12  p-0 mt-3">
+        <div className="col-12 p-0 mt-3">
           <div className="card contactUsCard contactUsCardNoBorder border-0">
             <div className="card-body">
               <h3 className="card-title ntpCardTitle2 text-normal">
@@ -89,7 +89,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
             </div>
           </div>
         </div>
-        <div className="col-12 mt-3 mb-3 p-0">
+        <div className="col-12 mt-5 mb-3 p-0">
           <div className="card contactUsCard hAuto border-0">
             <div className="card-body">
               <span className="h1 font-weight-bold">
@@ -200,7 +200,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                 onClick={() => redirectPage('/')}
                 className="btn btn-primary btnThemeClr getInTouchBtnMobile w-100 p-3 mt-2 mb-2"
               >
-                View Projects
+              VIEW PROJECTS
               </span>
             </div>
           </div>

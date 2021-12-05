@@ -81,7 +81,7 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo, sortedInfo }) => {
               <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>
               <Link
                 to="/ContactUs"
-                className="btn btn-primary btnThemeClr getInTouchBtnMobile"
+                className="btn btn-primary btnThemeClr getInTouchBtnMobile w-100 p-2 mt-2 mb-2 fs-20"
               >
                 GET IN TOUCH
               </Link>

@@ -28,7 +28,7 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
               NOW LETS WORK ON YOUR PROJECT{' '}
               <span
                 onClick={() => redirectPage('/ContactUs')}
-                className="btn btn-primary btnThemeClr mt-3 mb-3 p-2 w-100 fs-25"
+                className="btn btn-primary btnThemeClr getInTouchBtnMobile w-100 p-2 mt-2 mb-2 fs-20"
               >
                 <strong>GET IN TOUCH</strong>
               </span>
