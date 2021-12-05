@@ -17,7 +17,7 @@ const ContainerCards = ({
       <div class="card">
         <div class="card-header h1 font-weight-bold p-0 border-0">
           <div className="h6">{subtitle}</div>
-          <div className="h2 font-weight-bold">{title}</div>
+          <div className="h1 font-weight-bold">{title}</div>
         </div>
         {media &&
           media.map(({ url: imageURL }) => (

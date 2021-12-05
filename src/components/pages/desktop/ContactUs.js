@@ -24,7 +24,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
         <div className="col">
           <div className="card contactUsCard hAuto border-0">
             <div className="card-body">
-              <span className="h1 font-weight-bold">
+              <span className="ntpCardTitle2 font-weight-bold">
                 WE’D LOVE TO HEAR FROM YOU!
               </span>
               <form
@@ -112,7 +112,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
         <div className="col">
           <div className="card contactUsCard contactUsCardNoBorder border-0">
             <div className="card-body">
-              <h3 className="card-title ntpCardTitle2 text-normal">
+              <h3 className="card-title mt-1 ntpCardTitle2 text-normal">
                 GET IN TOUCH
               </h3>
               <form>

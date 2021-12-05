@@ -15,7 +15,7 @@ const ContainerCards = ({
   return (
     <div className={`row ${isMobile ? 'pl-1 pr-1 pt-1' : 'pl-5 pr-5 pt-5'}`}>
       <div class="card w-100 pt-3 pb-3">
-        <div class="card-header h1 font-weight-bold">{title}</div>
+        <div class="card-header homeTitle font-weight-bold">{title}</div>
         {media &&
           media.map(({ url: imageURL }) => (
             <img
@@ -25,13 +25,19 @@ const ContainerCards = ({
             />
           ))}
         {subtitle && (
-          <div class="card-body">
+          <div class={`card-body ${isMobile ? '' : 'w-50'}`}>
             {subtitle && <h5 class="card-title">{subtitle}</h5>}
           </div>
         )}
         <ul class="list-group list-group-flush">
           {text.map(({ text: label }) => (
-            <li class="list-group-item border-0 p-1 pt-3">{label}</li>
+            <li
+              class={`list-group-item border-0 p-1 pt-3  ${
+                isMobile ? '' : 'w-50'
+              }`}
+            >
+              {label}
+            </li>
           ))}
         </ul>
       </div>

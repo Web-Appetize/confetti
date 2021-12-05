@@ -28,8 +28,8 @@ const ContainerCards = ({
     >
       <div className={`containerCards col-12 ${isMobile ? 'p-0' : ''}`}>
         <div
-          className={`col-12 h1 font-weight-bolder ${
-            showTitle ? 'mt-3 mb-3' : 'd-none'
+          className={`col-12 homeTitle font-weight-bolder ${
+            showTitle ? 'mt-3 mb-3' : 'd-none mb-5'
           }`}
         >
           {homeProjectTitles[index]}

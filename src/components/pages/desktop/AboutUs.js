@@ -39,7 +39,7 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo , sortedInfo }) => {
       <div className="row aboutUsStarCard-1"></div>
       <div className="row pl-5">
         <div className="col-7">
-          <span className="fs-55 text-bold">
+          <span className="homeTitle text-bold">
             <strong>{title}</strong>{' '}
           </span>
         </div>
@@ -48,7 +48,7 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo , sortedInfo }) => {
       <div className="row pl-5 pt-5">
         <div className="col-7">
           <h1 className="text-bold mt-3">
-            <strong className="fs-55 text-bold pt-5">{subtitle}</strong>{' '}
+            <strong className="homeTitle text-bold pt-5">{subtitle}</strong>{' '}
           </h1>
         </div>
         <div className="col-7 aboutUsStarCard-3"></div>

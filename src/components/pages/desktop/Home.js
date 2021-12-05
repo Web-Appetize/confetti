@@ -97,7 +97,7 @@ const Home = ({
                 Your browser does not support the video tag.
               </video>
 
-              <div className="carousel-caption d-md-block">
+              <div className="carousel-caption d-md-block top40">
                 <span>{title}</span>
               </div>
               <div className="carousel-caption w-100 m-auto">
