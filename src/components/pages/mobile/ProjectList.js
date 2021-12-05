@@ -57,7 +57,7 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
                   </div>
                 </div>
               </div>
-              <div className="h4 m-5 p-3 w-100 mx-auto text-secondary">
+              <div className="h4 m-5 p-3 w-100 mx-auto text-dark">
                 {project.subtitle}
               </div>
               {projectCards.map((project, idx) => {

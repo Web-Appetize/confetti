@@ -14,7 +14,7 @@ const ContainerCards = ({
 }) => {
   return (
     <div className={`row ${isMobile ? 'pl-1 pr-1 pt-1' : 'pl-5 pr-5 pt-5'}`}>
-      <div class="card w-100">
+      <div class="card w-100 pt-3 pb-3">
         <div class="card-header h1 font-weight-bold">{title}</div>
         {media &&
           media.map(({ url: imageURL }) => (

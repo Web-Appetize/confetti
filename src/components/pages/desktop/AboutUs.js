@@ -45,10 +45,10 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo , sortedInfo }) => {
         </div>
         <div className="col-4 aboutUsStarCard-2"></div>
       </div>
-      <div className="row pl-5">
+      <div className="row pl-5 pt-5">
         <div className="col-7">
           <h1 className="text-bold mt-3">
-            <strong className="thatsUstext">{subtitle}</strong>{' '}
+            <strong className="fs-55 text-bold pt-5">{subtitle}</strong>{' '}
           </h1>
         </div>
         <div className="col-7 aboutUsStarCard-3"></div>

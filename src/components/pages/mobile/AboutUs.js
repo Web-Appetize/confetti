@@ -42,12 +42,17 @@ const AboutUs = ({ aboutInfo, connectInfo, noTimeInfo, sortedInfo }) => {
           <strong>{title}</strong>{' '}
         </span>
       </div>
-      <div className="row text-left h5 p-2">
-        <h1 className="text-bold mt-3">
-          <strong className="thatsUstext">{subtitle}</strong>{' '}
+      <div className="row text-left">
+        <span className="h2 text-bold p-1">
+          <strong>{subtitle}</strong>{' '}
+        </span>
+      </div>
+      {/* <div className="row text-left h5 p-2 pt-1">
+        <h1 className="text-bold mt-3 pt-1">
+          <strong className="h2 text-bold p-1">{subtitle}</strong>{' '}
         </h1>
         <div className="col-7 aboutUsStarCard-3"></div>
-      </div>
+      </div> */}
       {projectCards.map((project, idx) => {
         return (
           <AboutUsCards

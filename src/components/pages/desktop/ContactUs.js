@@ -105,7 +105,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                     </label>
                     <div className="input-group mb-3">
                       <div className="input-group-prepend">
-                        <div className="fs-25 input-group-text ">
+                        <div className="fs-25 input-group-text text-dark">
                           <i className="fa fa-phone-alt" aria-hidden="true"></i>
                         </div>
                       </div>
@@ -116,7 +116,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                         placeholder=""
                       />
                       <div className="input-group-append">
-                        <span className="fs-25 input-group-text " id="basic-addon2">
+                        <span className="fs-25 input-group-text text-dark" id="basic-addon2">
                           +91 7817920743
                         </span>
                       </div>
