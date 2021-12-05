@@ -18,7 +18,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
     <div className="container-fluid">
       <div className="row">
         <div className="col-12  p-0 mt-3">
-          <div className="card contactUsCard contactUsCardNoBorder border-0 shadow-sm">
+          <div className="card contactUsCard contactUsCardNoBorder border-0">
             <div className="card-body">
               <h3 className="card-title ntpCardTitle2 text-normal">
                 GET IN TOUCH
@@ -85,7 +85,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
           </div>
         </div>
         <div className="col-12 mt-3 mb-3 p-0">
-          <div className="card contactUsCard hAuto shadow-sm border-0">
+          <div className="card contactUsCard hAuto border-0">
             <div className="card-body">
               <span className="h1 font-weight-bold">
                 WE’D LOVE TO HEAR FROM YOU!
@@ -140,13 +140,14 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                 </div>
                 <div className="form-group">
                   <label for="message">MESSAGE :</label>
-                  <input
-                    type="text"
-                    className="form-control"
+                  <textarea
+                    class="form-control"
                     id="message"
-                    placeholder="HOW CAN WE HELP YOU ?"
+                    rows="3"
                     name="message"
-                  />
+                    placeholder="HOW CAN WE HELP YOU ?"
+
+                  ></textarea>
                 </div>
                 <button
                   // type="submit"

@@ -81,7 +81,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                 </div>
                 <button
                   // type="submit"
-                  className="btn btn-default disabledBtn"
+                  className="btn btn-default contactUsSendBtn"
                   data-toggle="modal"
                   data-target="#sendMessage"
                 >

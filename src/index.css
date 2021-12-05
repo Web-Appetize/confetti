@@ -23,6 +23,13 @@ body {
   color: gray;
 }
 
+.contactUsSendBtn {
+  padding: 5px 35px;
+  background: #a763f6 !important;
+  color: white !important;
+  font-weight: bold;
+}
+
 .themeClr {
   color: #a763f6;
 }
