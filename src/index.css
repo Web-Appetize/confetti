@@ -130,7 +130,7 @@ body {
 
 @media screen and (min-width: 1600px) {
   .videoContent .top40 {
-    top: 30%;
+    top: 15%;
     font-size: 6rem;
     line-height: 7rem;
   }
