@@ -186,8 +186,8 @@ const Home = ({
         </div>
         <div className="col p-0 mt-3">
           <div className="card notTimePaddingMobile cardBackImgMobile">
-            <div className="card-body">
-              <h3 className="card-title ntpCardTitle2">{sortedInfo.text}</h3>
+            <div className="card-body pt-5 pb-5">
+              <h3 className="card-title ntpCardTitle2 pb-3">{sortedInfo.text}</h3>
               <Link
                 to="/ContactUs"
                 className="btn btn-primary btnThemeClr getInTouchBtnMobile w-100 p-2 mt-2 mb-2 fs-20"

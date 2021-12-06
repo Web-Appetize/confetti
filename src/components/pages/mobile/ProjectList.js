@@ -34,12 +34,12 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
               </span>
             </div>
             <div className="row">
-              <div className="p-5">
-                <div className="w-100 h6">Client</div>
+              <div className="pt-5 pl-3 pb-5">
+                <div className="w-100 h6">CLIENT</div>
                 <div className="w-100 h1 mb-3 font-weight-bold">{project.client}</div>
-                <div className="w-100 h6">Industry</div>
+                <div className="w-100 h6">INDUSTRY</div>
                 <div className="w-100 h1 mb-3 font-weight-bold">{project.industry}</div>
-                <div className="w-100 h6">Project Type</div>
+                <div className="w-100 h6">PROJECT TYPE</div>
                 <div className="w-100 h1 mb-3 font-weight-bold">{project.projectType}</div>
               </div>
               <div
@@ -57,7 +57,7 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
                   </div>
                 </div>
               </div>
-              <div className="h4 m-5 p-3 w-100 mx-auto text-dark">
+              <div className="h5 m-5 p-3 w-100 mx-auto text-dark">
                 {project.subtitle}
               </div>
               {projectCards.map((project, idx) => {
@@ -89,7 +89,7 @@ const AboutUs = ({ projectInfo, connectInfo }) => {
                   </div>
                 )
               )}
-              <div className="p-3 text-center mt-5 w-100">
+              <div className="p-3 text-center mt-5 mb-3 w-100">
                 <h1 className="font-weight-bold text-left">IMPRESSED BY OUR WORK?</h1>
                 <button
                   type="button"
