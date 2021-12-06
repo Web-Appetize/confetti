@@ -54,7 +54,7 @@ const Footer = ({
                   </span>
                 </span>
               </div>
-              <div className="footerTitle2">{title}</div>
+              <div className="footerTitle2 pt-3">{title}</div>
               <div className="footerTitle3">
                 {addressMail} <br /> {phone}{' '}
               </div>
