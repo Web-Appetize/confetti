@@ -34,7 +34,7 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                 onSubmit={(e) => e.preventDefault()}
               >
                 <div className="form-group">
-                  <label for="name">Name :</label>
+                  <label for="name">NAME :</label>
                   <input
                     type="name"
                     className="form-control"
@@ -46,9 +46,9 @@ const ContactUs = ({ connectInfo, msgSentInfo }) => {
                   />
                 </div>
                 <div className="form-group">
-                  <label for="email">Email Address :</label>
+                  <label for="email">EMAIL ADDRESS :</label>
                   <input
-                    type="email"
+                    type="text"
                     className="form-control"
                     id="email"
                     placeholder="NAME@EXAMPLE.COM"

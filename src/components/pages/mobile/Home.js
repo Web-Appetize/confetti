@@ -43,37 +43,41 @@ const Home = ({
       }`}
     >
       <div className={`slider ${slider ? '' : 'close'}`}>
-        <div className="transparent"></div>
-        <div className="content">
-          <div className="titleBar">
-            <i className="fas fa-times" onClick={() => setSlider(!slider)}></i>
-          </div>
-          <div className="dataContainer">
-            <div className="title">
-              {currentServiceTitle}
-              <span>
-                {imageURL && (
-                  <img
-                    alt={currentServiceTitle}
-                    className="img-responsive align-baseline ml-2"
-                    src={imageURL}
-                    height="30"
-                  />
-                )}
-              </span>
+        <div className="transparent">
+          <div className="content">
+            <div className="titleBar">
+              <i
+                className="fas fa-times"
+                onClick={() => setSlider(!slider)}
+              ></i>
             </div>
-            {currentServiceDescription.map(({ text, id }) => (
-              <div key={id} className="h4 mb-3">
-                {text}
+            <div className="dataContainer">
+              <div className="title">
+                {currentServiceTitle}
+                <span>
+                  {imageURL && (
+                    <img
+                      alt={currentServiceTitle}
+                      className="img-responsive align-baseline ml-2"
+                      src={imageURL}
+                      height="30"
+                    />
+                  )}
+                </span>
               </div>
-            ))}
+              {currentServiceDescription.map(({ text, id }) => (
+                <div key={id} className="fs18 mb-3">
+                  {text}
+                </div>
+              ))}
 
-            <Link
-              to="/ContactUs"
-              className="btn btn-primary btnThemeClr getInTouchBtnMobile w-100 p-2 mt-2 mb-2 fs-20"
-            >
-              GET IN TOUCH
-            </Link>
+              <Link
+                to="/ContactUs"
+                className="btn btn-primary btnThemeClr getInTouchBtnMobile w-100 p-2 mt-2 mb-2 fs-20"
+              >
+                GET IN TOUCH
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -99,7 +103,7 @@ const Home = ({
               </video>
 
               <div className="carousel-caption carousel-caption-mobile d-md-block">
-                <span>{title}</span>
+                <span className="mr-5">{title}</span>
                 <br />
                 <div class="mouse_scroll_mobile">
                   <div class="mouse">
@@ -187,7 +191,9 @@ const Home = ({
         <div className="col p-0 mt-3">
           <div className="card notTimePaddingMobile cardBackImgMobile">
             <div className="card-body pt-5 pb-5">
-              <h3 className="card-title ntpCardTitle2 pb-3">{sortedInfo.text}</h3>
+              <h3 className="card-title ntpCardTitle2 pb-3">
+                {sortedInfo.text}
+              </h3>
               <Link
                 to="/ContactUs"
                 className="btn btn-primary btnThemeClr getInTouchBtnMobile w-100 p-2 mt-2 mb-2 fs-20"
