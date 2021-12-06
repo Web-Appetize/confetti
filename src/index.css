@@ -95,6 +95,8 @@ body {
   position: relative;
   margin: 0 auto;
   height: 100vh;
+  display: flex !important;
+  align-items: center;
 }
 
 .videoContent video {
@@ -128,9 +130,12 @@ body {
   bottom: 10%;
 }
 
+.videoContent .top40 {
+  bottom: unset !important;
+}
+
 @media screen and (min-width: 1600px) {
   .videoContent .top40 {
-    top: 15%;
     font-size: 6rem;
     line-height: 7rem;
   }
@@ -144,7 +149,7 @@ nav {
   font-family: mySFFont;
   width: 20%;
   text-align: start;
-  font-size: 50px;
+  font-size: 3.1rem;
   font-weight: bold;
   margin-left: -25px;
   z-index: 0;
@@ -375,15 +380,17 @@ nav {
 
 .slider .transparent {
   background: #000000e8;
-  height: 45%;
+  height: 40rem;
 }
 
 .slider .content {
   background-color: white;
   padding: 10px;
   color: black;
-  height: 65%;
+  max-height: 55vh;
   z-index: 10;
+  position: fixed;
+  bottom: 0;
 }
 
 .slider.close {
@@ -792,7 +799,7 @@ nav {
   left: 0;
   bottom: 0;
   width: 100%;
-  font-size: 18px;
+  font-size: 1rem;
   padding: 25px;
   z-index: 10;
   font-weight: bold;
