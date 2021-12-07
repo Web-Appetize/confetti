@@ -390,7 +390,7 @@ nav {
   height: fit-content;
   z-index: 10;
   bottom: 0;
-  position: fixed;
+  position: absolute;
 }
 
 .fs18 {
