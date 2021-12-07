@@ -43,41 +43,37 @@ const Home = ({
       }`}
     >
       <div className={`slider ${slider ? '' : 'close'}`}>
-        <div className="transparent">
-          <div className="content">
-            <div className="titleBar">
-              <i
-                className="fas fa-times"
-                onClick={() => setSlider(!slider)}
-              ></i>
+        <div className="transparent"></div>
+        <div className="content">
+          <div className="titleBar">
+            <i className="fas fa-times" onClick={() => setSlider(!slider)}></i>
+          </div>
+          <div className="dataContainer">
+            <div className="title">
+              {currentServiceTitle}
+              <span>
+                {imageURL && (
+                  <img
+                    alt={currentServiceTitle}
+                    className="img-responsive align-baseline ml-2"
+                    src={imageURL}
+                    height="30"
+                  />
+                )}
+              </span>
             </div>
-            <div className="dataContainer">
-              <div className="title">
-                {currentServiceTitle}
-                <span>
-                  {imageURL && (
-                    <img
-                      alt={currentServiceTitle}
-                      className="img-responsive align-baseline ml-2"
-                      src={imageURL}
-                      height="30"
-                    />
-                  )}
-                </span>
+            {currentServiceDescription.map(({ text, id }) => (
+              <div key={id} className="fs18 mb-3">
+                {text}
               </div>
-              {currentServiceDescription.map(({ text, id }) => (
-                <div key={id} className="fs18 mb-3">
-                  {text}
-                </div>
-              ))}
+            ))}
 
-              <Link
-                to="/ContactUs"
-                className="btn btn-primary btnThemeClr getInTouchBtnMobile w-100 p-2 mt-2 mb-2 fs-20"
-              >
-                GET IN TOUCH
-              </Link>
-            </div>
+            <Link
+              to="/ContactUs"
+              className="btn btn-primary btnThemeClr getInTouchBtnMobile w-100 p-2 mt-2 mb-2 fs-20"
+            >
+              GET IN TOUCH
+            </Link>
           </div>
         </div>
       </div>

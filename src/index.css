@@ -380,17 +380,17 @@ nav {
 
 .slider .transparent {
   background: #000000e8;
-  height: 100%;
+  height: 70%;
 }
 
 .slider .content {
   background-color: white;
   padding: 10px;
   color: black;
-  height: fit-content;
+  max-height: 50%;
   z-index: 10;
+  position: fixed;
   bottom: 0;
-  position: absolute;
 }
 
 .fs18 {
