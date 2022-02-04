@@ -1,83 +1,147 @@
-import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import GithubContext from "../../context/github_finder/context";
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import loading_url from '../../imgs/Confetti_logo.png';
+import ConfettiContext from '../../context/confetti_context/context';
+import { isMobile } from 'react-device-detect';
 
-const Navbar = ({ title }) => {
-  const githubContext = useContext(GithubContext);
-  const [searchUserText, setsearchUserText] = useState("");
-  const [errorpage, seterrorpage] = useState(false);
+const Navbar = () => {
+  const navigate = useNavigate();
+  const { tabs } = useContext(ConfettiContext);
 
-  const onChange = e => {
-    setsearchUserText(e.target.value);
+  const [open, setNav] = useState(false);
+  let isBlackBar = false;
+  tabs.forEach((tab) => {
+    if (!isBlackBar) {
+      isBlackBar = window.location.href.indexOf(tab) !== -1;
+    }
+  });
+
+  const redirectPage = (tabName) => {
+    navigate(tabName);
   };
 
-  const onSubmit = e => {
-    e.preventDefault();
-    if (searchUserText !== "") {
-      githubContext.searchUsers(searchUserText);
-    } else {
-      seterrorpage(true);
-      setTimeout(function() {
-        seterrorpage(false);
-      }, 1500);
-    }
+  const closeOverlayandnavigate = (tabName) => {
+    setNav(!open);
+    navigate(tabName);
   };
 
   return (
     <React.Fragment>
-      {errorpage && (
-        <div className="alert alert-danger mt-5" role="alert">
-          Please specify the user name.
+      <div id="myNav" className={`overlay ${open ? 'w-100' : ''}`}>
+        <div className="overlay-content">
+          <span
+            onClick={() => closeOverlayandnavigate('/')}
+            className="text-white font-weight-bold"
+          >
+            <span>HOME </span>
+          </span>
+          <span
+            onClick={() => closeOverlayandnavigate('/AboutUs')}
+            className="text-white font-weight-bold"
+          >
+            <span> ABOUT US</span>
+          </span>
+          <span
+            key="NavGetInTouchUrl"
+            onClick={() => closeOverlayandnavigate('/ContactUs')}
+            className={`btn btn-primary btnThemeClr NavGetInTouchUrl text-white font-weight-bold fs-25 pt-2 pb-2 ${
+              open ? '' : 'd-none'
+            }`}
+          >
+            GET IN TOUCH
+          </span>
         </div>
-      )}
-
-      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <Link className="navbar-brand text-info" to="/">
-          <i className="fas fa-user-circle fa-lg"></i>
-          &nbsp;
-          {title}
-        </Link>
+        <span
+          className={`navOverlayBottomText h6 text-center ${
+            open ? '' : 'd-none'
+          }`}
+          role="img"
+          aria-labelledby="img"
+        >
+          WE TAKE CARE OF YOUR BRAND LIKE ITS OUR CHILD 💜
+        </span>
+      </div>
+      <nav
+        className={`navbar navbar-expand-lg navbar-light ${
+          isBlackBar ? 'shadow-sm' : ''
+        } ${isMobile ? 'top5px' : ''}`}
+      >
+        <span
+          className="navbar-brand text-info"
+          onClick={() => redirectPage('/')}
+        >
+          <img
+            src={loading_url}
+            alt="Confetti"
+            style={{ marginLeft: isMobile ? '10%' : '100%' }}
+            width={isMobile ? '40px' : '45px'}
+            height="40px"
+          />
+        </span>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler customToggler"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          {open ? (
+            <i
+              className={`fas fa-times text-white`}
+              onClick={() => setNav(!open)}
+            ></i>
+          ) : (
+            <i
+              className={`fas fa-bars ${isBlackBar ? '' : 'text-white'}`}
+              onClick={() => setNav(!open)}
+            ></i>
+          )}
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav">
+        <div className="collapse navbar-collapse">
+          <ul className="navbar-nav ml-auto">
             <li className="nav-item ">
-              <Link className="nav-link" to="AboutUs">
-                About us
-              </Link>
+              <span className="nav-link" onClick={() => redirectPage('/')}>
+                <button
+                  type="button"
+                  className={`${
+                    isBlackBar ? '' : 'text-white'
+                  } btn btn-default font-weight-bold`}
+                >
+                  HOME
+                </button>
+              </span>
+            </li>
+            <li className="nav-item ">
+              <span
+                className="nav-link"
+                onClick={() => redirectPage('/AboutUs')}
+              >
+                <button
+                  type="button"
+                  className={`${
+                    isBlackBar ? '' : 'text-white'
+                  } btn btn-default font-weight-bold`}
+                >
+                  ABOUT US
+                </button>
+              </span>
+            </li>
+            <li className="nav-item mr-5">
+              <span
+                className="nav-link"
+                onClick={() => redirectPage('/ContactUs')}
+              >
+                <button
+                  type="button"
+                  className="btn btnThemeClr text-white font-weight-bold pl-4 pr-4"
+                >
+                  GET IN TOUCH
+                </button>
+              </span>
             </li>
           </ul>
-          <form
-            className="form-inline my-2 my-lg-0 ml-auto col-md-10"
-            onSubmit={onSubmit}
-          >
-            <input
-              className="form-control mr-sm-2 col-md-8 ml-auto"
-              type="search"
-              placeholder="Enter Name"
-              aria-label="Search"
-              name="searchUserText"
-              value={searchUserText}
-              onChange={onChange}
-            />
-            <button
-              className="btn btn-outline-success my-2 my-sm-0"
-              type="submit"
-            >
-              Search Github Users
-            </button>
-          </form>
         </div>
       </nav>
     </React.Fragment>
@@ -85,11 +149,11 @@ const Navbar = ({ title }) => {
 };
 
 Navbar.defaultProps = {
-  title: "Page Title"
+  title: 'Page Title',
 };
 
 Navbar.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 
 export default Navbar;

@@ -1,4 +1,12 @@
-export const GET_USERS = "GET_USERS";
-export const GET_PROFILE = "GET_PROFILE";
-export const SEARCH_USERS = "SEARCH_USERS";
-export const SET_LOADING = "SET_LOADING";
+export const SET_HOME_INFO = 'SET_HOME_INFO';
+export const SET_PROJECT_INFO = 'SET_PROJECT_INFO';
+export const SET_LOADING = 'SET_LOADING';
+export const SET_SERVICE_INFO = 'SET_SERVICE_INFO';
+export const SET_NOTIME_INFO = 'SET_NOTIME_INFO';
+export const SET_CONNECT_INFO = 'SET_CONNECT_INFO';
+export const SET_ABOUT_INFO = 'SET_ABOUT_INFO';
+export const SET_SORTED_INFO = 'SET_SORTED_INFO';
+export const SET_LOCK_INFO = 'SET_LOCK_INFO';
+export const SET_MSGSENT_INFO = 'SET_MSGSENT_INFO';
+export const SET_TABS = 'SET_TABS';
+
